@@ -6,6 +6,9 @@ var player
 @export var substance_name = "test"
 @onready var interaction_text = $Label
 @onready var substance_name_text = $Label2
+@onready var animation_player = $AnimationPlayer
+@onready var collision = $CollisionShape2D
+@onready var sprite = $Sprite2D
 
 
 func _ready():
@@ -22,8 +25,13 @@ func _process(delta): #is called every frame
 			position = Vector2(0, -16) #set position
 			interaction_text.visible = false #set text to invisible
 			substance_name_text.visible = false #set text to invisible
+			sprite.offset = Vector2(0, 0)
+			collision.position = Vector2(0, 0)
+			interaction_text.position = Vector2(0, 0)
+			substance_name_text.position = Vector2(0, 0)
 		else: #player IS the parent
 			reparent(get_tree().root) #change parent to root of the tree
+			animation_player.play("fall")
 
 
 func _on_body_entered(body): #if player collides with substance
