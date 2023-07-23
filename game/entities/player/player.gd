@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed := 100.0
+var speed := 200.0
 
 
 

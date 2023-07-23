@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dods77s4ifum0"]
+
+[ext_resource type="Script" path="res://game/entities/player/main_camera.gd" id="1_e4c3p"]
+
+[node name="MainCamera" type="Camera2D"]
+enabled = false
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+script = ExtResource("1_e4c3p")

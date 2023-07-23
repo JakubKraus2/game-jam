@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://d10ik3agmtbg1"]
+
+[ext_resource type="PackedScene" uid="uid://duequn7bci144" path="res://game/entities/player/player.tscn" id="1_f1nhd"]
+[ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="1_u4083"]
+[ext_resource type="PackedScene" uid="uid://dcafk723wfvb2" path="res://game/objects/door.tscn" id="2_4xygn"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Room" parent="." instance=ExtResource("1_u4083")]
+
+[node name="Door" parent="Room" instance=ExtResource("2_4xygn")]
+position = Vector2(-311, 1)
+
+[node name="Door2" parent="Room" instance=ExtResource("2_4xygn")]
+position = Vector2(311, -7)
+
+[node name="Room2" parent="." instance=ExtResource("1_u4083")]
+position = Vector2(-320, 180)
+
+[node name="Door3" parent="Room2" instance=ExtResource("2_4xygn")]
+position = Vector2(311, 1)
+
+[node name="Room3" parent="." instance=ExtResource("1_u4083")]
+position = Vector2(960, 180)
+
+[node name="Door3" parent="Room3" instance=ExtResource("2_4xygn")]
+position = Vector2(-311, -8)
+
+[node name="Player" parent="." instance=ExtResource("1_f1nhd")]
+position = Vector2(313, 177)
