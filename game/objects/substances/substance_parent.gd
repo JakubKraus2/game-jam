@@ -38,10 +38,9 @@ func _on_body_entered(body): #if player collides with substance
 	interaction_text.visible = true #set text to visible
 	substance_name_text.visible = true #set text to visible
 	player = body #player is now saved into player variable
-	set_process(true) #process is turned on
+	if !animation_player.is_playing():
+		set_process(true) #process is turned on
 
 func _on_body_exited(body): #player is no longer colliding with substance
-	if get_parent().name == "Player":
-		set_process(false) #turn process off
 	interaction_text.visible = false #set text to invisible
 	substance_name_text.visible = false #set text to invisible
