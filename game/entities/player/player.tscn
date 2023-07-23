@@ -3,10 +3,11 @@
 [ext_resource type="Script" path="res://game/entities/player/player.gd" id="1_ikhtd"]
 [ext_resource type="Texture2D" uid="uid://bkkthac4y68ts" path="res://assets/player.png" id="2_u6xck"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_br0sa"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3840"]
+size = Vector2(15, 7)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 scale = Vector2(2, 2)
 script = ExtResource("1_ikhtd")
 
@@ -14,4 +15,5 @@ script = ExtResource("1_ikhtd")
 texture = ExtResource("2_u6xck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_br0sa")
+position = Vector2(-0.5, 12.5)
+shape = SubResource("RectangleShape2D_v3840")
