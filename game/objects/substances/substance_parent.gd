@@ -29,6 +29,7 @@ func _process(delta): #is called every frame
 			collision.position = Vector2(0, 0)
 			interaction_text.position = Vector2(0, 0)
 			substance_name_text.position = Vector2(0, 0)
+			animation_player.stop()
 		else: #player IS the parent
 			reparent(get_tree().root) #change parent to root of the tree
 			animation_player.play("fall")
@@ -38,9 +39,11 @@ func _on_body_entered(body): #if player collides with substance
 	interaction_text.visible = true #set text to visible
 	substance_name_text.visible = true #set text to visible
 	player = body #player is now saved into player variable
-	if !animation_player.is_playing():
-		set_process(true) #process is turned on
+	set_process(true) #process is turned on
 
 func _on_body_exited(body): #player is no longer colliding with substance
 	interaction_text.visible = false #set text to invisible
 	substance_name_text.visible = false #set text to invisible
+	await get_tree().create_timer(0.1).timeout
+	if get_parent().name != "Player":
+		set_process(false)

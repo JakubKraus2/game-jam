@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxj0hix8hj2pc"]
+[gd_scene load_steps=8 format=3 uid="uid://dxj0hix8hj2pc"]
 
 [ext_resource type="Texture2D" uid="uid://ccddntubxbipw" path="res://assets/arrow.png" id="1_ikc3n"]
 [ext_resource type="Script" path="res://game/objects/substances/test_substance.gd" id="1_wcy1o"]
+[ext_resource type="FontFile" uid="uid://bcnigp5vdyfoj" path="res://assets/fonts/Prata.ttf" id="3_217yj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vd6ds"]
 size = Vector2(38, 21)
+
+[sub_resource type="Animation" id="Animation_rbgas"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_6lfbf"]
 resource_name = "fall"
@@ -69,23 +73,6 @@ tracks/4/keys = {
 "update": 1,
 "values": [5, 0]
 }
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [false],
-"method": &"set_process"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_rbgas"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3q3kf"]
 _data = {
@@ -94,7 +81,6 @@ _data = {
 }
 
 [node name="TestSubstance" type="Area2D"]
-z_index = 5
 script = ExtResource("1_wcy1o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -110,6 +96,9 @@ offset_left = -49.0
 offset_top = -38.0
 offset_right = 49.0
 offset_bottom = -15.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_217yj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -119,6 +108,9 @@ offset_left = -69.0
 offset_top = -25.0
 offset_right = 69.0
 offset_bottom = -1.99998
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_217yj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
