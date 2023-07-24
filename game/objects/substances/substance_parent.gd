@@ -22,7 +22,7 @@ func _ready():
 
 func _process(delta): #is called every frame
 	if Input.is_action_just_pressed("interact"): #after pressing F
-		if get_parent().name != "Player": #is player not the current parent?
+		if get_parent().name != "Player" && !animation_player.is_playing(): #is player not the current parent?
 			reparent(player) #change current parent to player
 			player.can_pick_up = false
 			position = Vector2(0, -16) #set position
@@ -32,7 +32,7 @@ func _process(delta): #is called every frame
 			collision.position = Vector2(0, 0)
 			interaction_text.position = Vector2(0, 0)
 			substance_name_text.position = Vector2(0, 0)
-			animation_player.stop()
+#			animation_player.stop()
 			collision_checker.set_deferred("monitorable", false)
 		else: #player IS the parent
 			reparent(get_tree().root) #change parent to root of the tree
