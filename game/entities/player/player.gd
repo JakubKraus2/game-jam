@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var speed := 200.0
-
+var can_pick_up = true
 
 
 func _physics_process(delta):
