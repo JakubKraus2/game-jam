@@ -33,10 +33,12 @@ func _process(delta): #is called every frame
 			interaction_text.position = Vector2(0, 0)
 			substance_name_text.position = Vector2(0, 0)
 			animation_player.stop()
+			collision_checker.set_deferred("monitorable", false)
 		else: #player IS the parent
 			reparent(get_tree().root) #change parent to root of the tree
 			player.can_pick_up = true
 			animation_player.play("fall")
+			collision_checker.set_deferred("monitorable", true)
 
 
 func _on_body_entered(body): #if player collides with substance
