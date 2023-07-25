@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("put"):
 		for i in player.get_children():
-			if i.is_in_group("substances"):
+			if i.is_in_group("substances") && placements.size() > 0:
 				i.reparent(placements[0])
 				i.global_position = placements[0].global_position
 				i.set_process(false)

@@ -40,5 +40,8 @@ position = Vector2(407, 212)
 [node name="TestSubstance3" parent="." instance=ExtResource("4_jkhfc")]
 position = Vector2(538, 210)
 
+[node name="TestSubstance4" parent="." instance=ExtResource("4_jkhfc")]
+position = Vector2(536, 250)
+
 [node name="SubstanceTable" parent="." instance=ExtResource("5_ikadw")]
 position = Vector2(466, 160)
