@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
-Game Jam/.github_ac_key.txt
+
+github_ac_key.txt
