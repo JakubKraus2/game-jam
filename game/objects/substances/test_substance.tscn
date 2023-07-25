@@ -2,13 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://ccddntubxbipw" path="res://assets/arrow.png" id="1_ikc3n"]
 [ext_resource type="Script" path="res://game/objects/substances/test_substance.gd" id="1_wcy1o"]
-[ext_resource type="FontFile" uid="uid://bcnigp5vdyfoj" path="res://assets/fonts/Prata.ttf" id="3_217yj"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="3_ftwtb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd6ds"]
-size = Vector2(38, 21)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wucle"]
+radius = 16.5
+height = 56.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltjhh"]
-size = Vector2(84, 52)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncu23"]
+radius = 24.0
+height = 82.0
 
 [sub_resource type="Animation" id="Animation_rbgas"]
 length = 0.001
@@ -38,7 +40,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 1.5), Vector2(0, 26.5), Vector2(0, 59.5), Vector2(0, 53.5), Vector2(0, 59.5), Vector2(0, 55.5), Vector2(0, 59.5)]
+"values": [Vector2(0, 0), Vector2(0, 25), Vector2(0, 58), Vector2(0, 50), Vector2(0, 58), Vector2(0, 54), Vector2(0, 58)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -50,7 +52,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-49, -38), Vector2(-49, -13), Vector2(-49, 20), Vector2(-49, 14), Vector2(-49, 20), Vector2(-49, 16), Vector2(-49, 20)]
+"values": [Vector2(-49, -52), Vector2(-49, -27), Vector2(-49, 16), Vector2(-49, 8), Vector2(-49, 16), Vector2(-49, 12), Vector2(-49, 16)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -62,7 +64,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-69, -25), Vector2(-69, 0), Vector2(-69, 33), Vector2(-69, 27), Vector2(-69, 33), Vector2(-69, 29), Vector2(-69, 33)]
+"values": [Vector2(-69, -40), Vector2(-69, -10), Vector2(-69, 28), Vector2(-69, 20), Vector2(-69, 28), Vector2(-69, 24), Vector2(-69, 28)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -102,37 +104,34 @@ script = ExtResource("1_wcy1o")
 texture = ExtResource("1_ikc3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_vd6ds")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wucle")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_ltjhh")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ncu23")
 
 [node name="Label" type="Label" parent="."]
 z_index = 10
 offset_left = -49.0
-offset_top = -38.0
+offset_top = -52.0
 offset_right = 49.0
-offset_bottom = -15.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("3_217yj")
+offset_bottom = -29.0
+theme = ExtResource("3_ftwtb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 z_index = 10
 offset_left = -69.0
-offset_top = -25.0
+offset_top = -40.0
 offset_right = 69.0
-offset_bottom = -1.99998
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("3_217yj")
+offset_bottom = -16.9999
+theme = ExtResource("3_ftwtb")
 horizontal_alignment = 1
 vertical_alignment = 1
 

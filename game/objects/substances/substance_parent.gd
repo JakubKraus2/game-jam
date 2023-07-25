@@ -3,7 +3,7 @@ class_name Substance
 
 
 var player
-@export var substance_name = "test"
+@export var substance_name = "Test"
 @onready var interaction_text = $Label
 @onready var substance_name_text = $Label2
 @onready var animation_player = $AnimationPlayer
@@ -21,6 +21,9 @@ func _ready():
 	set_process(false) #process is turned off for optimalization
 
 func _process(delta): #is called every frame
+	if collision_checker.has_overlapping_areas():
+		for i in collision_checker.get_overlapping_areas():
+			i.get_parent().set_process(false)
 	if Input.is_action_just_pressed("interact"): #after pressing F
 		if get_parent().name != "Player" && !animation_player.is_playing(): #is player not the current parent?
 			reparent(player) #change current parent to player
@@ -30,9 +33,9 @@ func _process(delta): #is called every frame
 			substance_name_text.visible = false #set text to invisible
 			sprite.offset = Vector2(0, 0)
 			collision.position = Vector2(0, 0)
-			interaction_text.position = Vector2(0, 0)
-			substance_name_text.position = Vector2(0, 0)
-#			animation_player.stop()
+			collision_checker.position = Vector2(0, 0)
+			interaction_text.position = Vector2(-49, -42)
+			substance_name_text.position = Vector2(-69, -25)
 			collision_checker.set_deferred("monitorable", false)
 		else: #player IS the parent
 			reparent(get_tree().root) #change parent to root of the tree
@@ -45,11 +48,11 @@ func _on_body_entered(body): #if player collides with substance
 	interaction_text.visible = true #set text to visible
 	substance_name_text.visible = true #set text to visible
 	player = body #player is now saved into player variable
+	if player.can_pick_up == true:
+		set_process(true) #process is turned on
 	if collision_checker.has_overlapping_areas():
 		for i in collision_checker.get_overlapping_areas():
 			i.get_parent().set_process(false)
-	if player.can_pick_up == true:
-		set_process(true) #process is turned on
 
 func _on_body_exited(body): #player is no longer colliding with substance
 	interaction_text.visible = false #set text to invisible

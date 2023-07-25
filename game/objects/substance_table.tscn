@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkfikavmlfpoh"]
+
+[ext_resource type="Texture2D" uid="uid://cdhw0ha76pkw2" path="res://assets/objects/substance_table.png" id="1_b36hf"]
+[ext_resource type="Script" path="res://game/objects/substance_table.gd" id="1_xb0te"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_5qa31"]
+[ext_resource type="PackedScene" uid="uid://dgcgfdmxp8fqu" path="res://game/objects/substance_placement.tscn" id="4_d21hy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6br0"]
+size = Vector2(64, 18)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmaug"]
+radius = 36.0
+height = 136.0
+
+[node name="SubstanceTable" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_xb0te")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b36hf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_y6br0")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dmaug")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = -60.0
+offset_right = 46.0
+offset_bottom = -34.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_5qa31")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 48.0
+offset_bottom = -14.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_5qa31")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubstancePlacement" parent="." instance=ExtResource("4_d21hy")]
+position = Vector2(-19, -6)
+
+[node name="SubstancePlacement2" parent="." instance=ExtResource("4_d21hy")]
+position = Vector2(0, -6)
+
+[node name="SubstancePlacement3" parent="." instance=ExtResource("4_d21hy")]
+position = Vector2(19, -6)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
