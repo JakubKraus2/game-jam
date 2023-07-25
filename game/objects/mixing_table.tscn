@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkbml5e8sfjbe"]
+
+[ext_resource type="Texture2D" uid="uid://d2pvvxatebjkw" path="res://assets/objects/mixing_table.png" id="1_277c7"]
+[ext_resource type="Script" path="res://game/objects/mixing_table.gd" id="1_d44mj"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_qkxsn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1127"]
+size = Vector2(64, 29)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xlk86"]
+radius = 32.0
+height = 116.0
+
+[node name="MixingTable" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_d44mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_277c7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_m1127")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = -60.0
+offset_right = 46.0
+offset_bottom = -34.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_qkxsn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = -40.0
+offset_right = 48.0
+offset_bottom = -14.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_qkxsn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xlk86")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -5,8 +5,9 @@
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_5qa31"]
 [ext_resource type="PackedScene" uid="uid://dgcgfdmxp8fqu" path="res://game/objects/substance_placement.tscn" id="4_d21hy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6br0"]
-size = Vector2(64, 18)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_62g4u"]
+radius = 13.0
+height = 48.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dmaug"]
 radius = 36.0
@@ -22,8 +23,9 @@ texture = ExtResource("1_b36hf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -6)
-shape = SubResource("RectangleShape2D_y6br0")
+position = Vector2(0, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_62g4u")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -65,13 +67,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SubstancePlacement" parent="." instance=ExtResource("4_d21hy")]
-position = Vector2(-19, -6)
+position = Vector2(-13, -12)
 
 [node name="SubstancePlacement2" parent="." instance=ExtResource("4_d21hy")]
-position = Vector2(0, -6)
+position = Vector2(0, -4)
 
 [node name="SubstancePlacement3" parent="." instance=ExtResource("4_d21hy")]
-position = Vector2(19, -6)
+position = Vector2(13, -12)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

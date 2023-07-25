@@ -4,21 +4,24 @@ extends StaticBody2D
 
 var player
 var placements = []
+var substances = []
 @onready var interaction_input_text = $Label
 @onready var interaction_text = $Label2
+@export var mixing_table = Node2D
 
 
 func _ready():
 	$Label.visible = false
 	$Label2.visible = false
 	$Label.text = "[" + InputMap.action_get_events("put")[0].as_text() + "]"
-	$Label2.text = "Put Down"
+	$Label2.text = "Place"
 	set_process(false)
 
 func _process(delta):
 	if Input.is_action_just_pressed("put"):
 		for i in player.get_children():
 			if i.is_in_group("substances") && placements.size() > 0:
+				substances.append(i)
 				i.reparent(placements[0])
 				i.global_position = placements[0].global_position
 				i.set_process(false)
@@ -29,12 +32,13 @@ func _process(delta):
 						j.get_parent().set_process(false)
 		$Label.visible = false
 		$Label2.visible = false
+	mixing_table.check_placements()
 
 
 func _on_area_2d_body_entered(body):
 	player = body
 	set_process(true)
-	if player.can_pick_up == false:
+	if player.can_pick_up == false && placements.size() > 0:
 		$Label.visible = true
 		$Label2.visible = true
 
