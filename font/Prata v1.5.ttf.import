@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cbep1snguwgjn"
-path="res://.godot/imported/Prata.ttf-776327ee13d0a8b25a77aa50ef6c6122.fontdata"
+path="res://.godot/imported/Prata v1.5.ttf-836961bfb2806d8f97c617a1091c0f98.fontdata"
 
 [deps]
 
-source_file="res://font/Prata.ttf"
-dest_files=["res://.godot/imported/Prata.ttf-776327ee13d0a8b25a77aa50ef6c6122.fontdata"]
+source_file="res://font/Prata v1.5.ttf"
+dest_files=["res://.godot/imported/Prata v1.5.ttf-836961bfb2806d8f97c617a1091c0f98.fontdata"]
 
 [params]
 
