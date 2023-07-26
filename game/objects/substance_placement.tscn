@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgcgfdmxp8fqu"]
+
+[ext_resource type="Script" path="res://game/objects/substance_placement.gd" id="1_djixe"]
+[ext_resource type="Texture2D" uid="uid://0jnkhmeicmyo" path="res://assets/objects/placeable_circle.png" id="1_u7vwv"]
+
+[node name="SubstancePlacement" type="Sprite2D"]
+texture = ExtResource("1_u7vwv")
+script = ExtResource("1_djixe")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

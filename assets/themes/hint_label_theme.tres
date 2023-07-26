@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bg721ml30kggd"]
+
+[ext_resource type="FontFile" uid="uid://bcnigp5vdyfoj" path="res://assets/fonts/Prata.ttf" id="1_vr0y1"]
+
+[resource]
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_vr0y1")

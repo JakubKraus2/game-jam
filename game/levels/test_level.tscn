@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d10ik3agmtbg1"]
+[gd_scene load_steps=7 format=3 uid="uid://d10ik3agmtbg1"]
 
 [ext_resource type="PackedScene" uid="uid://duequn7bci144" path="res://game/entities/player/player.tscn" id="1_f1nhd"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="1_u4083"]
 [ext_resource type="PackedScene" uid="uid://dcafk723wfvb2" path="res://game/objects/door.tscn" id="2_4xygn"]
 [ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/test_substance.tscn" id="4_jkhfc"]
+[ext_resource type="PackedScene" uid="uid://dkfikavmlfpoh" path="res://game/objects/substance_table.tscn" id="5_ikadw"]
+[ext_resource type="PackedScene" uid="uid://bkbml5e8sfjbe" path="res://game/objects/mixing_table.tscn" id="6_eako7"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -31,10 +33,21 @@ position = Vector2(-311, -8)
 position = Vector2(313, 177)
 
 [node name="TestSubstance" parent="." instance=ExtResource("4_jkhfc")]
-position = Vector2(171, 225)
+position = Vector2(465, 224)
 
 [node name="TestSubstance2" parent="." instance=ExtResource("4_jkhfc")]
-position = Vector2(114, 226)
+position = Vector2(408, 225)
 
 [node name="TestSubstance3" parent="." instance=ExtResource("4_jkhfc")]
-position = Vector2(245, 224)
+position = Vector2(539, 223)
+
+[node name="TestSubstance4" parent="." instance=ExtResource("4_jkhfc")]
+position = Vector2(537, 263)
+
+[node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("5_ikadw")]
+position = Vector2(466, 160)
+mixing_table = NodePath("../MixingTable")
+
+[node name="MixingTable" parent="." node_paths=PackedStringArray("substance_table") instance=ExtResource("6_eako7")]
+position = Vector2(407, 160)
+substance_table = NodePath("../SubstanceTable")
