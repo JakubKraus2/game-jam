@@ -28,10 +28,10 @@ func _process(delta): #is called every frame
 		if get_parent().name != "Player" && !animation_player.is_playing(): #is player not the current parent?
 			reparent(player) #change current parent to player
 			player.can_pick_up = false
-			position = Vector2(0, -14) #set position
+			position = Vector2(0, -16) #set position
 			interaction_text.visible = false #set text to invisible
 			substance_name_text.visible = false #set text to invisible
-			sprite.offset = Vector2(0, -5)
+			sprite.offset = Vector2(0, 0)
 			collision.position = Vector2(0, 0)
 			collision_checker.position = Vector2(0, 0)
 			interaction_text.position = Vector2(-49, -42)

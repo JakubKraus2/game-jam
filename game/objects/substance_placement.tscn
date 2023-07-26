@@ -5,7 +5,6 @@
 
 [node name="SubstancePlacement" type="Sprite2D"]
 texture = ExtResource("1_u7vwv")
-offset = Vector2(0, -2)
 script = ExtResource("1_djixe")
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8dbskajmfac2"]
+
+[ext_resource type="Texture2D" uid="uid://doqbg8fyumc55" path="res://assets/icon.svg" id="1_hovqy"]
+[ext_resource type="Script" path="res://game/minigames/mixing_mini_game.gd" id="1_pe0pw"]
+[ext_resource type="FontFile" uid="uid://ccc1kwjkhbo8j" path="res://assets/fonts/Prata v1.5.ttf" id="2_70nie"]
+[ext_resource type="Texture2D" uid="uid://d2pvvxatebjkw" path="res://assets/objects/mixing_table.png" id="2_ah33m"]
+
+[node name="MixingMiniGame" type="CanvasLayer"]
+script = ExtResource("1_pe0pw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -3.0
+offset_top = 57.0
+offset_right = 639.0
+offset_bottom = 503.0
+texture = ExtResource("2_ah33m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(384, 161)
+scale = Vector2(1, 2)
+texture = ExtResource("1_hovqy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(244, 157)
+scale = Vector2(1, 2)
+texture = ExtResource("1_hovqy")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(96, 156)
+scale = Vector2(1, 2)
+texture = ExtResource("1_hovqy")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_70nie")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
