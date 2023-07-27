@@ -4,6 +4,7 @@ class_name Substance
 
 var player
 @export var substance_name = "Test"
+@export var substance_color = Color(1, 1, 1, 1)
 @onready var interaction_text = $Label
 @onready var substance_name_text = $Label2
 @onready var animation_player = $AnimationPlayer

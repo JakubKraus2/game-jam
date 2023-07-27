@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvh611fqvjtqx" path="res://assets/objects/erlenmeyer_flask_big.png" id="1_yiau4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g07x5"]
-size = Vector2(54, 64)
+size = Vector2(43, 51)
 
 [node name="FlaskBig" type="AnimatableBody2D"]
 z_index = 1
@@ -22,13 +22,14 @@ texture = ExtResource("1_yiau4")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-24, -28)
 scale = Vector2(134.505, 1.0564)
-polygon = PackedVector2Array(0.264198, 3.45808, 0.253046, 3.45808, 0.253046, 19.5504, 0.334828, 44.6356, 0.308806, 48.422, 0.253046, 51.7351, 0.0969176, 51.2618, 0.0560268, 50.3152, 0.0188534, 45.5822, 0.0300054, 39.9025, 0.0708962, 27.1233, 0.100635, 19.0771, 0.100635, 2.98478, 0.0894829, 2.98478, 0.0894829, 19.0771, 0.0523095, 29.9631, 0.0114187, 41.7957, 0.00770134, 46.5288, 0.0523095, 52.6817, 0.256763, 53.155, 0.316241, 49.8419, 0.349697, 44.6356, 0.267915, 20.0237)
+polygon = PackedVector2Array(0.264198, 3.45808, 0.230475, 4.73306, 0.237909, 18.9322, 0.308539, 43.0708, 0.297387, 46.3839, 0.256496, 49.2238, 0.118955, 48.7505, 0.0743467, 48.2772, 0.0483254, 44.964, 0.0483254, 40.7043, 0.0929334, 26.9784, 0.118955, 18.9322, 0.118955, 3.78645, 0.0894829, 2.98478, 0.0894829, 19.0771, 0.0523095, 29.9631, 0.0114187, 41.7957, 0.00770134, 46.5288, 0.0523095, 52.6817, 0.256763, 53.155, 0.316241, 49.8419, 0.349697, 44.6356, 0.267915, 20.0237)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 256
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_g07x5")
 
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

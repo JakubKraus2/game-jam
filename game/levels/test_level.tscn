@@ -34,15 +34,23 @@ position = Vector2(313, 177)
 
 [node name="TestSubstance" parent="." instance=ExtResource("4_jkhfc")]
 position = Vector2(465, 224)
+substance_name = "Zluta"
+substance_color = Color(0.694118, 0.560784, 0, 1)
 
 [node name="TestSubstance2" parent="." instance=ExtResource("4_jkhfc")]
 position = Vector2(408, 225)
+substance_name = "Cerna"
+substance_color = Color(0, 0, 0, 1)
 
 [node name="TestSubstance3" parent="." instance=ExtResource("4_jkhfc")]
 position = Vector2(539, 223)
+substance_name = "Modra"
+substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
 
 [node name="TestSubstance4" parent="." instance=ExtResource("4_jkhfc")]
 position = Vector2(537, 263)
+substance_name = "Zelena"
+substance_color = Color(0.12549, 0.564706, 0.290196, 1)
 
 [node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("5_ikadw")]
 position = Vector2(466, 160)

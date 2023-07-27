@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ducdyvnlwnqyx"]
+
+[ext_resource type="Script" path="res://game/minigames/mixing_minigame/substance_particle.gd" id="1_a21w0"]
+[ext_resource type="Texture2D" uid="uid://b1pv10eqejjs7" path="res://assets/objects/substance_particle.png" id="1_oyhis"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_om67x"]
+radius = 6.0
+
+[node name="SubstanceParticle" type="RigidBody2D" groups=["substance_particle"]]
+collision_layer = 192
+collision_mask = 192
+script = ExtResource("1_a21w0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_oyhis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_om67x")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 6)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

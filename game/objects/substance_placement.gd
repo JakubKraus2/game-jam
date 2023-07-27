@@ -10,6 +10,7 @@ func _on_child_exiting_tree(node):
 	get_parent().placements.append(self)
 	get_parent().interaction_input_text.visible = true
 	get_parent().interaction_text.visible = true
+	get_parent().substances.erase(node)
 
 func _on_child_entered_tree(node):
 	await get_tree().create_timer(0.01).timeout
