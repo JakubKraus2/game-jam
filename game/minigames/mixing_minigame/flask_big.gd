@@ -22,7 +22,6 @@ func _process(delta):
 	elif Input.is_action_just_released("left_click"):
 		var tween = create_tween()
 		tween.tween_property(self, "global_position", global_position, 250 * delta)
-		rotation = 0
 		set_process(false)
 		$Area2D/CollisionShape2D.disabled = true
 		await get_tree().create_timer(0.1).timeout
