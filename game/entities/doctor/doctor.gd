@@ -2,6 +2,7 @@ extends StaticBody2D
 
 
 
+var game_over_screen = load("res://game/menus/game_over_screen/game_over_screen.tscn")
 var player
 
 
@@ -14,6 +15,8 @@ func _ready():
 
 func _process(delta):
 	if player.can_pick_up == false:
+		var game_over_screen_instance = game_over_screen.instantiate()
+		get_tree().root.add_child(game_over_screen_instance)
 		$Label.visible = true
 		$Label2.visible = true
 		if Input.is_action_just_pressed("put"):
@@ -22,7 +25,9 @@ func _process(delta):
 					if i.is_in_group("correct"):
 						i.queue_free()
 						player.can_pick_up = true
-						print("victory")
+						game_over_screen_instance.get_node("AnimationPlayer").play("victory")
+						await game_over_screen_instance.get_node("AnimationPlayer").animation_finished
+						get_tree().change_scene_to_file("res://game/menus/level_select_menu.tscn")
 						if Global.level < Global.current_level + 1:
 							Global.level =  Global.current_level + 1
 							Global.data.level = Global.level
@@ -31,7 +36,9 @@ func _process(delta):
 					else:
 						i.queue_free()
 						player.can_pick_up = true
-						print("game over")
+						game_over_screen_instance.get_node("AnimationPlayer").play("lost")
+						await game_over_screen_instance.get_node("AnimationPlayer").animation_finished
+						get_tree().change_scene_to_file("res://game/menus/level_select_menu.tscn")
 						break
 	else:
 		$Label.visible = false
