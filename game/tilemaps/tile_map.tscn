@@ -1,21 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://uhuuva6ixau3"]
+[gd_scene load_steps=10 format=3 uid="uid://uhuuva6ixau3"]
 
 [ext_resource type="Texture2D" uid="uid://bvhq6vyb5rpwy" path="res://assets/floor.png" id="1_nh0tm"]
 [ext_resource type="Texture2D" uid="uid://dgtmfog0iht35" path="res://assets/floor2.png" id="2_b7ge8"]
+[ext_resource type="Texture2D" uid="uid://ck6hns3slgt5e" path="res://assets/wall.png" id="3_3hyav"]
+[ext_resource type="Texture2D" uid="uid://gp4aiir5hw0s" path="res://assets/black_spacing.png" id="4_rk4sp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqju6"]
 texture = ExtResource("1_nh0tm")
 texture_region_size = Vector2i(96, 48)
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_36ajb"]
 resource_name = "floor2"
 texture = ExtResource("2_b7ge8")
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u8naa"]
+resource_name = "wall"
+texture = ExtResource("3_3hyav")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nktb0"]
+texture = ExtResource("4_rk4sp")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_21t3w"]
+physics_layer_0/collision_layer = 8
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_eqju6")
 sources/1 = SubResource("TileSetAtlasSource_36ajb")
+sources/2 = SubResource("TileSetAtlasSource_u8naa")
+sources/3 = SubResource("TileSetAtlasSource_nktb0")
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_21t3w")
