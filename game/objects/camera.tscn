@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dutojn00tlgb5"]
+
+[ext_resource type="Texture2D" uid="uid://ctjhjeo8nxkdo" path="res://assets/objects/camera.png" id="1_nn4nk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rv535"]
+size = Vector2(32, 54)
+
+[node name="Camera" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Camera" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_nn4nk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_rv535")

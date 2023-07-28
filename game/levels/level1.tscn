@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d10ik3agmtbg1"]
+[gd_scene load_steps=25 format=3 uid="uid://d10ik3agmtbg1"]
 
 [ext_resource type="Script" path="res://game/levels/level1.gd" id="1_nwfgv"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_3y6w1"]
@@ -19,8 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://bgp5lh34x7jne" path="res://game/objects/bookcase_side.tscn" id="16_yxqhf"]
 [ext_resource type="Texture2D" uid="uid://dxdgyomft85gb" path="res://assets/objects/bosch.png" id="18_3y7rh"]
 [ext_resource type="PackedScene" uid="uid://c6bknqttucdaq" path="res://game/objects/sofa.tscn" id="19_pkmye"]
+[ext_resource type="Texture2D" uid="uid://cx7781scqofiv" path="res://assets/objects/power_outlet.png" id="20_kethu"]
 [ext_resource type="PackedScene" uid="uid://cdlmfx3sjk6aq" path="res://game/objects/table_computer.tscn" id="20_ww35i"]
 [ext_resource type="PackedScene" uid="uid://cd4v1d0pfn0kx" path="res://game/objects/round_table.tscn" id="21_dl6jd"]
+[ext_resource type="Texture2D" uid="uid://brwucdi57b8d3" path="res://assets/objects/painting.png" id="22_kmu12"]
+[ext_resource type="PackedScene" uid="uid://dutojn00tlgb5" path="res://game/objects/camera.tscn" id="23_hnu1g"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_nwfgv")
@@ -36,6 +39,11 @@ position = Vector2(-320, 180)
 [node name="Door" parent="Room2" instance=ExtResource("3_q3uw1")]
 position = Vector2(316, 32)
 scale = Vector2(-2, 1.35)
+
+[node name="TileMap" parent="." instance=ExtResource("9_8c4ug")]
+position = Vector2(0, 180)
+scale = Vector2(2, 2)
+layer_0/tile_data = PackedInt32Array(65516, 3, 0, 131052, 3, 0, 19, 3, 0, 65555, 3, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_e5qbd")]
 position = Vector2(138, 222)
@@ -103,11 +111,6 @@ position = Vector2(343, 243)
 [node name="Table2" parent="Furniture" instance=ExtResource("20_ww35i")]
 position = Vector2(-91, 258)
 
-[node name="Bosch2" type="Sprite2D" parent="Furniture"]
-position = Vector2(234, 221)
-scale = Vector2(2, 2)
-texture = ExtResource("18_3y7rh")
-
 [node name="BookcaseSide2" parent="Furniture" instance=ExtResource("16_yxqhf")]
 position = Vector2(-172, 260)
 rotation = 3.14159
@@ -116,10 +119,20 @@ scale = Vector2(1, -1)
 [node name="RoundTable" parent="Furniture" instance=ExtResource("21_dl6jd")]
 position = Vector2(179, 268)
 
-[node name="TileMap" parent="." instance=ExtResource("9_8c4ug")]
-position = Vector2(0, 180)
+[node name="PowerOutlet" type="Sprite2D" parent="Furniture"]
+position = Vector2(-45, 258)
 scale = Vector2(2, 2)
-layer_0/tile_data = PackedInt32Array(65516, 3, 0, 131052, 3, 0, 19, 3, 0, 65555, 3, 0)
+texture = ExtResource("20_kethu")
+
+[node name="PowerOutlet2" type="Sprite2D" parent="Furniture"]
+position = Vector2(757, 255)
+scale = Vector2(2, 2)
+texture = ExtResource("20_kethu")
+
+[node name="PowerOutlet3" type="Sprite2D" parent="Furniture"]
+position = Vector2(1016, 254)
+scale = Vector2(2, 2)
+texture = ExtResource("20_kethu")
 
 [node name="TestSubstance" parent="." instance=ExtResource("5_xid1p")]
 position = Vector2(-59, 140)
@@ -135,3 +148,11 @@ substance_color = Color(0, 0, 0, 1)
 position = Vector2(404, 161)
 substance_name = "Modra"
 substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
+
+[node name="Painting" type="Sprite2D" parent="."]
+position = Vector2(-177, 101)
+scale = Vector2(2, 2)
+texture = ExtResource("22_kmu12")
+
+[node name="Camera" parent="." instance=ExtResource("23_hnu1g")]
+position = Vector2(-320, 273)
