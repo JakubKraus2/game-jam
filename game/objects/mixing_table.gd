@@ -39,3 +39,7 @@ func check_placements():
 		interaction_text.visible = true
 		interaction_input_text.visible = true
 		set_process(true)
+	else:
+		interaction_text.visible = false
+		interaction_input_text.visible = false
+		set_process(false)

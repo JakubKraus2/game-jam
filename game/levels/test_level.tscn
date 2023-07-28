@@ -54,6 +54,16 @@ position = Vector2(537, 263)
 substance_name = "Zelena"
 substance_color = Color(0.12549, 0.564706, 0.290196, 1)
 
+[node name="TestSubstance5" parent="." instance=ExtResource("4_jkhfc")]
+position = Vector2(463, 263)
+substance_name = "Zelena"
+substance_color = Color(0.12549, 0.564706, 0.290196, 1)
+
+[node name="TestSubstance6" parent="." instance=ExtResource("4_jkhfc")]
+position = Vector2(404, 263)
+substance_name = "Zelena"
+substance_color = Color(0.12549, 0.564706, 0.290196, 1)
+
 [node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("5_ikadw")]
 position = Vector2(466, 160)
 mixing_table = NodePath("../MixingTable")
