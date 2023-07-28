@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 MainCamera="*res://game/entities/player/main_camera.tscn"
+Global="*res://game/globals/global.gd"
 
 [display]
 

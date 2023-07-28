@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://dokf5a7owb8vx"]
+
+[ext_resource type="Texture2D" uid="uid://bvhq6vyb5rpwy" path="res://assets/floor.png" id="1_r13mi"]
+[ext_resource type="Script" path="res://game/menus/level_select_menu.gd" id="1_ryc45"]
+[ext_resource type="Texture2D" uid="uid://bu80r7rolexmc" path="res://assets/menus/button.png" id="2_35nmr"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_kvcpb"]
+[ext_resource type="Texture2D" uid="uid://rw56157ehcjc" path="res://assets/menus/button_hover.png" id="3_crdbl"]
+[ext_resource type="Texture2D" uid="uid://wfhskj52xns5" path="res://assets/menus/button_disabled.png" id="6_h5ty7"]
+
+[node name="LevelSelectMenu" type="CanvasLayer"]
+script = ExtResource("1_ryc45")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -6.0
+offset_right = 656.0
+offset_bottom = 372.0
+texture = ExtResource("1_r13mi")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 80.0
+offset_top = 100.0
+offset_right = 560.0
+offset_bottom = 300.0
+theme = ExtResource("2_kvcpb")
+theme_override_constants/separation = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Level1" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("2_35nmr")
+texture_hover = ExtResource("3_crdbl")
+texture_disabled = ExtResource("6_h5ty7")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Level1"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level2" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("2_35nmr")
+texture_hover = ExtResource("3_crdbl")
+texture_disabled = ExtResource("6_h5ty7")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Level2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level3" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("2_35nmr")
+texture_hover = ExtResource("3_crdbl")
+texture_disabled = ExtResource("6_h5ty7")
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Level3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 64
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level1" to="." method="_on_texture_button_pressed"]

@@ -11,7 +11,6 @@ func _ready():
 	$Label2.text = "Hand over"
 	$Label.visible = false
 	$Label2.visible = false
-	
 
 func _process(delta):
 	if player.can_pick_up == false:
@@ -19,11 +18,21 @@ func _process(delta):
 		$Label2.visible = true
 		if Input.is_action_just_pressed("put"):
 			for i in player.get_children():
-				if i.is_in_group("correct"):
-					print("victory")
-				else:
-					print("game over")
-					break
+				if i.is_in_group("substances"):
+					if i.is_in_group("correct"):
+						i.queue_free()
+						player.can_pick_up = true
+						print("victory")
+						if Global.level < Global.current_level + 1:
+							Global.level =  Global.current_level + 1
+							Global.data.level = Global.level
+							Global.save_data()
+						break
+					else:
+						i.queue_free()
+						player.can_pick_up = true
+						print("game over")
+						break
 	else:
 		$Label.visible = false
 		$Label2.visible = false
