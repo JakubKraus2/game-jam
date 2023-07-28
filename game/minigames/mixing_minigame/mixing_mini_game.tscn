@@ -11,7 +11,7 @@ script = ExtResource("1_6kdww")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -3.0
 offset_top = 57.0
-offset_right = 639.0
+offset_right = 642.0
 offset_bottom = 503.0
 texture = ExtResource("2_2d3om")
 
@@ -43,7 +43,7 @@ offset_right = 285.0
 offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("4_kkhep")
 theme_override_font_sizes/font_size = 36
-text = "Ok"
+text = "Apply"
 
 [connection signal="child_entered_tree" from="PouringFlask" to="." method="_on_pouring_flask_child_entered_tree"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

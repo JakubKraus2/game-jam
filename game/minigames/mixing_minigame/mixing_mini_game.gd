@@ -6,6 +6,7 @@ var flask_big = load("res://game/minigames/mixing_minigame/flask_big.tscn")
 var generated_substance = load("res://game/objects/substances/test_substance.tscn")
 var progress_box = load("res://game/minigames/mixing_minigame/progress_box.tscn")
 var space = 104
+var color_icon_spacing = 48
 
 var passable = 0
 var wrong_substances = {}
@@ -29,6 +30,12 @@ func _ready():
 		var progress_box_instance = progress_box.instantiate()
 		$ProgressContainer.add_child(progress_box_instance)
 		progress_box_instance.substance_name.text = str(get_parent().substance_table.substances[i].substance_name)
+		var color_icon = Sprite2D.new()
+		add_child(color_icon)
+		color_icon.global_position = Vector2($ProgressContainer.global_position.x - 8, $ProgressContainer.global_position.y - ((get_parent().substance_table.substances.size()-1)*color_icon_spacing) + (i*color_icon_spacing) + 16)
+		color_icon.texture = load("res://assets/objects/substance_particle.png")
+		color_icon.set_modulate(get_parent().substance_table.substances[i].substance_color)
+		color_icon.set_scale(Vector2(5, 5))
 		if get_parent().owner.correct_substances.has(get_parent().substance_table.substances[i].substance_name):
 			progress_box_instance.substance_percentage.text = "%d" % get_parent().owner.correct_substances[get_parent().substance_table.substances[i].substance_name] + "%"
 		else:
@@ -37,7 +44,6 @@ func _ready():
 			wrong_substances[progress_box_instance.substance_name.text] = 0
 			wrong_percentage.keys().append(progress_box_instance.substance_name.text)
 			wrong_percentage[progress_box_instance.substance_name.text] = floor(randf_range(10, 50))
-
 
 func update_percentage(node):
 	if node.is_in_group("substance_particle"):
