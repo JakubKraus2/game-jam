@@ -13,6 +13,8 @@ var wrong_percentage = {}
 
 
 func _ready():
+	$Button.disabled = false
+	$Button2.disabled = true
 	get_parent().player.set_physics_process(false)
 	for i in get_parent().owner.correct_substances:
 		get_parent().owner.correct_substances[i] = 0
@@ -50,6 +52,8 @@ func update_percentage(node):
 			i.substance_percentage.text = str(floor(wrong_substances[node.substance_particle_name] / wrong_percentage[node.substance_particle_name] * 100)) + "%"
 
 func _on_pouring_flask_child_entered_tree(node):
+	$Button2.disabled = false
+	$Button.disabled = true
 	update_percentage(node)
 
 
@@ -85,6 +89,7 @@ func generate_substance():
 				get_parent().substance_table.placements.append(i)
 	get_parent().substance_table.substances.append(generated_substance_instance)
 	generated_substance_instance.substance_color = Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1), randf_range(0.3, 1))
+	generated_substance_instance.substance_name = "Mixture"
 	get_parent().substance_table.placements[0].add_child(generated_substance_instance)
 	generated_substance_instance.global_position = get_parent().substance_table.placements[0].global_position
 	get_parent().substance_table.placements.erase(get_parent().substance_table.placements[0])
