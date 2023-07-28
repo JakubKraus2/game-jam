@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cua4vo4y7768n"]
+
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="1_n5n1c"]
+[ext_resource type="Script" path="res://game/minigames/mixing_minigame/progress_box.gd" id="2_1bed3"]
+
+[node name="ProgressBox" type="HBoxContainer"]
+theme = ExtResource("1_n5n1c")
+script = ExtResource("2_1bed3")
+
+[node name="SubstanceName" type="Label" parent="."]
+custom_minimum_size = Vector2(160, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+
+[node name="SubstancePercentage" type="Label" parent="."]
+custom_minimum_size = Vector2(80, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
