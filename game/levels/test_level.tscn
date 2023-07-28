@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d10ik3agmtbg1"]
+[gd_scene load_steps=8 format=3 uid="uid://d10ik3agmtbg1"]
 
 [ext_resource type="PackedScene" uid="uid://duequn7bci144" path="res://game/entities/player/player.tscn" id="1_f1nhd"]
+[ext_resource type="Script" path="res://game/levels/test_level.gd" id="1_pigwa"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="1_u4083"]
 [ext_resource type="PackedScene" uid="uid://dcafk723wfvb2" path="res://game/objects/door.tscn" id="2_4xygn"]
 [ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/test_substance.tscn" id="4_jkhfc"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bkbml5e8sfjbe" path="res://game/objects/mixing_table.tscn" id="6_eako7"]
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1_pigwa")
 
 [node name="Room" parent="." instance=ExtResource("1_u4083")]
 

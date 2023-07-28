@@ -7,7 +7,6 @@
 size = Vector2(43, 51)
 
 [node name="FlaskBig" type="AnimatableBody2D"]
-z_index = 1
 position = Vector2(220, 153)
 scale = Vector2(2, 2)
 collision_layer = 128

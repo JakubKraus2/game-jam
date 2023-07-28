@@ -9,6 +9,7 @@ radius = 6.0
 [node name="SubstanceParticle" type="RigidBody2D" groups=["substance_particle"]]
 collision_layer = 192
 collision_mask = 192
+sleeping = true
 script = ExtResource("1_a21w0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

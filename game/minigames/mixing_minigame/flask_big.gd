@@ -21,7 +21,7 @@ func _process(delta):
 			target.x = clamp(get_global_mouse_position().x, 0, get_viewport_rect().size.x)
 			target.y = clamp(get_global_mouse_position().y, 0, get_viewport_rect().size.y)
 			var tween = create_tween()
-			tween.tween_property(self, "global_position", target, 250 * delta)
+			tween.tween_property(self, "global_position", target, 100 * delta)
 			if Input.is_action_just_released("rotate_up"):
 				var rotation_tween = create_tween()
 				rotation_tween.tween_property(self, "rotation", rotation+0.4, 0.1)
@@ -46,3 +46,6 @@ func _on_area_2d_mouse_exited():
 	if !Input.is_action_pressed("left_click"):
 		dragging = false
 		set_process(false)
+
+func _on_area_2d_2_body_exited(body):
+	print("nn")
