@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8dbskajmfac2"]
+[gd_scene load_steps=5 format=3 uid="uid://c8dbskajmfac2"]
 
 [ext_resource type="Script" path="res://game/minigames/mixing_minigame/mixing_mini_game.gd" id="1_6kdww"]
 [ext_resource type="Texture2D" uid="uid://d2pvvxatebjkw" path="res://assets/objects/mixing_table.png" id="2_2d3om"]
 [ext_resource type="FontFile" uid="uid://ccc1kwjkhbo8j" path="res://assets/fonts/Prata v1.5.ttf" id="4_kkhep"]
 [ext_resource type="PackedScene" uid="uid://ghuvjlewkmfy" path="res://game/minigames/mixing_minigame/pouring_flask.tscn" id="4_muxly"]
-[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="5_r0ben"]
 
 [node name="MixingMiniGame" type="CanvasLayer"]
 script = ExtResource("1_6kdww")
@@ -16,22 +15,17 @@ offset_right = 639.0
 offset_bottom = 503.0
 texture = ExtResource("2_2d3om")
 
-[node name="VBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 264.0
-offset_top = 8.0
-offset_right = 508.0
-offset_bottom = 72.0
-theme = ExtResource("5_r0ben")
-
-[node name="SubstanceName" type="Label" parent="VBoxContainer"]
-custom_minimum_size = Vector2(160, 64)
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
-
-[node name="SubstancePercentage" type="Label" parent="VBoxContainer"]
-custom_minimum_size = Vector2(80, 64)
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
+[node name="ProgressContainer" type="VBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = -16
 
 [node name="PouringFlask" parent="." instance=ExtResource("4_muxly")]
 position = Vector2(167, 224)
