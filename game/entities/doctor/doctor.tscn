@@ -76,5 +76,7 @@ position = Vector2(0, 0.399999)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vdwgu")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
