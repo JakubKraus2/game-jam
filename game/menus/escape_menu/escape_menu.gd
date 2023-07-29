@@ -20,5 +20,6 @@ func _on_resume_button_pressed():
 
 func _on_quit_button_pressed():
 	PseudoLoading.get_node("AnimationPlayer").play("change")
+	$AnimationPlayer.play("close")
 	await PseudoLoading.get_node("AnimationPlayer").animation_finished
 	get_tree().change_scene_to_file("res://game/menus/level_select_menu/level_select_menu.tscn")
