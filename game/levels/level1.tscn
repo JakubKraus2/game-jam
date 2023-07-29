@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d10ik3agmtbg1"]
+[gd_scene load_steps=27 format=3 uid="uid://d10ik3agmtbg1"]
 
 [ext_resource type="Script" path="res://game/levels/level1.gd" id="1_nwfgv"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_3y6w1"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cd4v1d0pfn0kx" path="res://game/objects/round_table.tscn" id="21_dl6jd"]
 [ext_resource type="Texture2D" uid="uid://brwucdi57b8d3" path="res://assets/objects/painting.png" id="22_kmu12"]
 [ext_resource type="PackedScene" uid="uid://dutojn00tlgb5" path="res://game/objects/camera.tscn" id="23_hnu1g"]
+[ext_resource type="Texture2D" uid="uid://bwtko2jjet4k5" path="res://assets/objects/carpet.png" id="24_f7jyf"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_nwfgv")
@@ -69,8 +70,9 @@ substance_table = NodePath("../SubstanceTable")
 [node name="Pacient" parent="." instance=ExtResource("8_sov86")]
 position = Vector2(302, 237)
 
-[node name="Doctor" parent="." instance=ExtResource("9_xj2ju")]
+[node name="Doctor" parent="." node_paths=PackedStringArray("patient") instance=ExtResource("9_xj2ju")]
 position = Vector2(294, 250)
+patient = NodePath("../Pacient")
 
 [node name="Furniture" type="Node2D" parent="."]
 position = Vector2(-427, -120)
@@ -148,6 +150,12 @@ texture = ExtResource("20_kethu")
 position = Vector2(250, 221)
 scale = Vector2(2, 2)
 texture = ExtResource("22_kmu12")
+
+[node name="Carpet" type="Sprite2D" parent="Furniture"]
+position = Vector2(108, 338)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("24_f7jyf")
 
 [node name="TestSubstance" parent="." instance=ExtResource("5_xid1p")]
 position = Vector2(-59, 140)

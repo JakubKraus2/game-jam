@@ -19,5 +19,5 @@ func _on_mixing_table_child_entered_tree(node):
 		mixing_minigame.get_node("Button").disabled = true
 
 func _on_child_exiting_tree(node):
-	if node == dialogue_player:
+	if node == dialogue_player && already_played == true:
 		mixing_minigame.get_node("Button").disabled = false

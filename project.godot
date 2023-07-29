@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Jam"
-run/main_scene="res://game/menus/level_select_menu.tscn"
+run/main_scene="res://game/menus/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://assets/icon.svg"
 MainCamera="*res://game/entities/player/main_camera.tscn"
 Global="*res://game/globals/global.gd"
 PseudoLoading="*res://game/menus/pseudo_loading.tscn"
+EscapeMenu="*res://game/menus/escape_menu/escape_menu.tscn"
 
 [display]
 

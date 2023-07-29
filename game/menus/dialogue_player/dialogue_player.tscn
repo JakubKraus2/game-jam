@@ -38,6 +38,6 @@ theme_override_font_sizes/font_size = 28
 autowrap_mode = 2
 
 [node name="CharTimer" type="Timer" parent="."]
-wait_time = 0.001
+wait_time = 0.03
 
 [connection signal="timeout" from="CharTimer" to="." method="_on_char_timer_timeout"]

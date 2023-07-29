@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://b54yd777y7rb0"]
+
+[ext_resource type="Texture2D" uid="uid://n0xdhrut8smx" path="res://assets/white_spacing.png" id="1_1pqj0"]
+[ext_resource type="Script" path="res://game/menus/main_menu/main_menu.gd" id="1_iitv3"]
+[ext_resource type="Texture2D" uid="uid://bsbihnl0ijqgj" path="res://assets/menus/main_menu/title.png" id="2_0ux8c"]
+[ext_resource type="Texture2D" uid="uid://b11nbftt41x67" path="res://assets/menus/main_menu/exit_button.png" id="4_icth2"]
+[ext_resource type="Texture2D" uid="uid://d4kp0gw2olp2d" path="res://assets/menus/main_menu/exit_button_hover.png" id="5_wepd2"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_iitv3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -6.0
+offset_right = 656.0
+offset_bottom = 372.0
+texture = ExtResource("1_1pqj0")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = 66.0
+offset_right = 166.0
+offset_bottom = 147.0
+grow_horizontal = 2
+texture = ExtResource("2_0ux8c")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -182.0
+offset_right = 90.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_icth2")
+texture_hover = ExtResource("5_wepd2")
+stretch_mode = 0
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_icth2")
+texture_hover = ExtResource("5_wepd2")
+stretch_mode = 0
+
+[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+texture_normal = ExtResource("4_icth2")
+texture_hover = ExtResource("5_wepd2")
+stretch_mode = 0
+
+[node name="QuitButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 426.0
+offset_top = 288.0
+offset_right = 466.0
+offset_bottom = 328.0
+texture_normal = ExtResource("4_icth2")
+texture_hover = ExtResource("5_wepd2")
+stretch_mode = 0
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

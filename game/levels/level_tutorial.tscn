@@ -161,8 +161,9 @@ position = Vector2(200, 247)
 [node name="Pacient" parent="." instance=ExtResource("4_u3t0a")]
 position = Vector2(302, 237)
 
-[node name="Doctor" parent="." instance=ExtResource("5_aaaug")]
+[node name="Doctor" parent="." node_paths=PackedStringArray("patient") instance=ExtResource("5_aaaug")]
 position = Vector2(294, 250)
+patient = NodePath("../Pacient")
 
 [node name="DoctorTalkArea" type="Area2D" parent="."]
 script = ExtResource("7_2jcna")
@@ -199,7 +200,7 @@ horizontal_alignment = 1
 [node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("9_5gtcb")]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.285714)
-position = Vector2(547, 156)
+position = Vector2(840, 156)
 mixing_table = NodePath("../MixingTable")
 
 [node name="SubstancePlacement" parent="SubstanceTable" instance=ExtResource("10_6cww4")]
@@ -214,24 +215,24 @@ position = Vector2(0, -2.5)
 [node name="MixingTable" parent="." node_paths=PackedStringArray("substance_table") instance=ExtResource("10_mt405")]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.285714)
-position = Vector2(488, 156)
+position = Vector2(781, 156)
 substance_table = NodePath("../SubstanceTable")
 
 [node name="TestSubstance" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(416, 198)
+position = Vector2(709, 198)
 substance_name = "Gulas"
 substance_color = Color(0.847059, 0.352941, 0.772549, 0.588235)
 
 [node name="TestSubstance2" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(484, 240)
+position = Vector2(777, 240)
 substance_name = "Svickova"
 substance_color = Color(0.364706, 0.560784, 0.447059, 0.470588)
 
 [node name="TestSubstance3" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(572, 252.355)
+position = Vector2(865, 252.355)
 substance_name = "Ryze"
 substance_color = Color(0.270588, 0.647059, 0.886275, 0.784314)
 
@@ -240,7 +241,7 @@ dialogue_file = "res://game/menus/dialogue_player/dialogues/tutorial_finding.jso
 player = NodePath("../Player")
 
 [node name="DialoguePlayerMinigame" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_vrlsc")]
-dialogue_file = "res://game/menus/dialogue_player/dialogues/tutorial_finding.json"
+dialogue_file = "res://game/menus/dialogue_player/dialogues/tutorial_mixing.json"
 player = NodePath("../Player")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
