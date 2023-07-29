@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d10ik3agmtbg1"]
+[gd_scene load_steps=26 format=3 uid="uid://d10ik3agmtbg1"]
 
 [ext_resource type="Script" path="res://game/levels/level1.gd" id="1_nwfgv"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_3y6w1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/substance.tscn" id="5_xid1p"]
 [ext_resource type="PackedScene" uid="uid://dkfikavmlfpoh" path="res://game/objects/substance_table.tscn" id="6_fra6e"]
 [ext_resource type="PackedScene" uid="uid://bkbml5e8sfjbe" path="res://game/objects/mixing_table.tscn" id="7_60go2"]
+[ext_resource type="PackedScene" uid="uid://dgcgfdmxp8fqu" path="res://game/objects/substance_placement.tscn" id="7_t1g0d"]
 [ext_resource type="PackedScene" uid="uid://dxebgtalcy47d" path="res://game/entities/pacient/pacient.tscn" id="8_sov86"]
 [ext_resource type="PackedScene" uid="uid://uhuuva6ixau3" path="res://game/tilemaps/tile_map.tscn" id="9_8c4ug"]
 [ext_resource type="PackedScene" uid="uid://dt3np3s7rjybf" path="res://game/entities/doctor/doctor.tscn" id="9_xj2ju"]
@@ -51,6 +52,15 @@ position = Vector2(138, 222)
 [node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("6_fra6e")]
 position = Vector2(547, 156)
 mixing_table = NodePath("../MixingTable")
+
+[node name="SubstancePlacement" parent="SubstanceTable" instance=ExtResource("7_t1g0d")]
+position = Vector2(-11, -10.5)
+
+[node name="SubstancePlacement2" parent="SubstanceTable" instance=ExtResource("7_t1g0d")]
+position = Vector2(11, -10.5)
+
+[node name="SubstancePlacement3" parent="SubstanceTable" instance=ExtResource("7_t1g0d")]
+position = Vector2(0, -2.5)
 
 [node name="MixingTable" parent="." node_paths=PackedStringArray("substance_table") instance=ExtResource("7_60go2")]
 position = Vector2(488, 156)

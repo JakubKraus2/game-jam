@@ -1,0 +1,10 @@
+[
+	{ "text": "Here you need to mix found substances into one."},
+    { "text": "You can grab the flasks by pressing left click and rotate them by mouse wheel."},
+    { "text": "Pravy dolni roh ukazuje názvy substancí a jejich procenta."},
+    { "text": "Procenta substance se zvětší podle toho, kolik si toho vlil"},
+    { "text": "Tvůj úkol je snažit se, aby všechny procenta byla co nejblíž stovce"},
+    { "text": "Dej si ale pozor, procenta se zvětšují i když si vybral špatnou substanci na mýchání."},
+    { "text": "jestliže namýcháš špatnou substanci, pacient může umřít."},
+    { "text": "No stress."}
+]

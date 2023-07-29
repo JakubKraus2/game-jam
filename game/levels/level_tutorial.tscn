@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bq66ltuh2r55g"]
+[gd_scene load_steps=17 format=3 uid="uid://bq66ltuh2r55g"]
 
 [ext_resource type="Script" path="res://game/levels/level_tutorial.gd" id="1_swhhx"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="1_yjbrp"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://game/levels/DoctorTalkArea.gd" id="7_2jcna"]
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="7_i7tpv"]
 [ext_resource type="PackedScene" uid="uid://dkfikavmlfpoh" path="res://game/objects/substance_table.tscn" id="9_5gtcb"]
+[ext_resource type="PackedScene" uid="uid://dgcgfdmxp8fqu" path="res://game/objects/substance_placement.tscn" id="10_6cww4"]
 [ext_resource type="PackedScene" uid="uid://bkbml5e8sfjbe" path="res://game/objects/mixing_table.tscn" id="10_mt405"]
 [ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/substance.tscn" id="12_0hvex"]
 
@@ -198,37 +199,48 @@ horizontal_alignment = 1
 [node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("9_5gtcb")]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.285714)
-position = Vector2(897, 156)
+position = Vector2(547, 156)
 mixing_table = NodePath("../MixingTable")
+
+[node name="SubstancePlacement" parent="SubstanceTable" instance=ExtResource("10_6cww4")]
+position = Vector2(-11, -10.5)
+
+[node name="SubstancePlacement2" parent="SubstanceTable" instance=ExtResource("10_6cww4")]
+position = Vector2(11, -10.5)
+
+[node name="SubstancePlacement3" parent="SubstanceTable" instance=ExtResource("10_6cww4")]
+position = Vector2(0, -2.5)
 
 [node name="MixingTable" parent="." node_paths=PackedStringArray("substance_table") instance=ExtResource("10_mt405")]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0.285714)
-position = Vector2(838, 156)
+position = Vector2(488, 156)
 substance_table = NodePath("../SubstanceTable")
 
 [node name="TestSubstance" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(766, 198)
+position = Vector2(416, 198)
 substance_name = "Gulas"
 substance_color = Color(0.847059, 0.352941, 0.772549, 0.588235)
 
 [node name="TestSubstance2" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(834, 240)
+position = Vector2(484, 240)
 substance_name = "Svickova"
 substance_color = Color(0.364706, 0.560784, 0.447059, 0.470588)
 
 [node name="TestSubstance3" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(922, 252.355)
+position = Vector2(572, 252.355)
 substance_name = "Ryze"
 substance_color = Color(0.270588, 0.647059, 0.886275, 0.784314)
 
 [node name="DialoguePlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_vrlsc")]
+dialogue_file = "res://game/menus/dialogue_player/dialogues/tutorial_finding.json"
 player = NodePath("../Player")
 
 [node name="DialoguePlayerMinigame" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_vrlsc")]
+dialogue_file = "res://game/menus/dialogue_player/dialogues/tutorial_finding.json"
 player = NodePath("../Player")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -236,6 +248,7 @@ libraries = {
 "": SubResource("AnimationLibrary_xpw6r")
 }
 
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="." to="DoctorTalkArea" method="_on_level_tutorial_child_exiting_tree"]
 [connection signal="body_entered" from="DoctorTalkArea" to="DoctorTalkArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DoctorTalkArea" to="DoctorTalkArea" method="_on_body_exited"]
