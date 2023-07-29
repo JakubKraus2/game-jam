@@ -25,6 +25,7 @@ func _process(delta):
 					if i.is_in_group("correct"):
 						i.queue_free()
 						player.can_pick_up = true
+						player.set_physics_process(false)
 						game_over_screen_instance.get_node("AnimationPlayer").play("victory")
 						await game_over_screen_instance.get_node("AnimationPlayer").animation_finished
 						get_tree().change_scene_to_file("res://game/menus/level_select_menu.tscn")
@@ -36,6 +37,7 @@ func _process(delta):
 					else:
 						i.queue_free()
 						player.can_pick_up = true
+						player.set_physics_process(false)
 						game_over_screen_instance.get_node("AnimationPlayer").play("lost")
 						await game_over_screen_instance.get_node("AnimationPlayer").animation_finished
 						get_tree().change_scene_to_file("res://game/menus/level_select_menu.tscn")
