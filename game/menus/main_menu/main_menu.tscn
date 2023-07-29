@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://b54yd777y7rb0"]
+[gd_scene load_steps=12 format=3 uid="uid://b54yd777y7rb0"]
 
 [ext_resource type="Texture2D" uid="uid://n0xdhrut8smx" path="res://assets/white_spacing.png" id="1_1pqj0"]
 [ext_resource type="Script" path="res://game/menus/main_menu/main_menu.gd" id="1_iitv3"]
 [ext_resource type="Texture2D" uid="uid://bsbihnl0ijqgj" path="res://assets/menus/main_menu/title.png" id="2_0ux8c"]
+[ext_resource type="Texture2D" uid="uid://ctl47mocshg5x" path="res://assets/menus/main_menu/select_level_button.png" id="4_286a2"]
 [ext_resource type="Texture2D" uid="uid://b11nbftt41x67" path="res://assets/menus/main_menu/exit_button.png" id="4_icth2"]
+[ext_resource type="Texture2D" uid="uid://dn4s51kpxmlaj" path="res://assets/menus/main_menu/select_level_button_hover.png" id="5_48ydo"]
 [ext_resource type="Texture2D" uid="uid://d4kp0gw2olp2d" path="res://assets/menus/main_menu/exit_button_hover.png" id="5_wepd2"]
+[ext_resource type="Texture2D" uid="uid://btjpc6pkcd0kl" path="res://assets/menus/main_menu/settings_button_disabled.png" id="6_so0iw"]
+[ext_resource type="Texture2D" uid="uid://cos15r85iubb8" path="res://assets/menus/main_menu/about_button.png" id="7_813yk"]
+[ext_resource type="Texture2D" uid="uid://dv14ve27suat8" path="res://assets/menus/main_menu/about_button_hover.png" id="8_lmb7u"]
+[ext_resource type="Texture2D" uid="uid://1n6r12qk400s" path="res://assets/menus/main_menu/date.png" id="11_yjio3"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_iitv3")
@@ -17,14 +23,14 @@ offset_bottom = 372.0
 texture = ExtResource("1_1pqj0")
 stretch_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="Title" type="TextureRect" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -166.0
-offset_top = 66.0
+offset_top = 52.0
 offset_right = 166.0
-offset_bottom = 147.0
+offset_bottom = 133.0
 grow_horizontal = 2
 texture = ExtResource("2_0ux8c")
 stretch_mode = 4
@@ -36,42 +42,55 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -90.0
-offset_top = -182.0
+offset_top = -202.0
 offset_right = 90.0
-offset_bottom = -32.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/separation = 16
+theme_override_constants/separation = 20
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+[node name="SelectLevelButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-texture_normal = ExtResource("4_icth2")
-texture_hover = ExtResource("5_wepd2")
+texture_normal = ExtResource("4_286a2")
+texture_hover = ExtResource("5_48ydo")
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+[node name="SettingsButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-texture_normal = ExtResource("4_icth2")
-texture_hover = ExtResource("5_wepd2")
+disabled = true
+texture_disabled = ExtResource("6_so0iw")
 stretch_mode = 0
 
-[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+[node name="AboutButton" type="TextureButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-texture_normal = ExtResource("4_icth2")
-texture_hover = ExtResource("5_wepd2")
+texture_normal = ExtResource("7_813yk")
+texture_hover = ExtResource("8_lmb7u")
 stretch_mode = 0
 
 [node name="QuitButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(40, 40)
 offset_left = 426.0
-offset_top = 288.0
+offset_top = 278.0
 offset_right = 466.0
-offset_bottom = 328.0
+offset_bottom = 318.0
 texture_normal = ExtResource("4_icth2")
 texture_hover = ExtResource("5_wepd2")
 stretch_mode = 0
 
+[node name="Date" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -30.0
+offset_right = 127.0
+offset_bottom = -12.0
+grow_vertical = 0
+texture = ExtResource("11_yjio3")
+stretch_mode = 4
+
+[connection signal="pressed" from="VBoxContainer/SelectLevelButton" to="." method="_on_select_level_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
