@@ -1,22 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxebgtalcy47d"]
+[gd_scene load_steps=6 format=3 uid="uid://dxebgtalcy47d"]
 
 [ext_resource type="Texture2D" uid="uid://dh43acmnxjbb3" path="res://assets/objects/pacient_seat.png" id="1_rxfkd"]
-[ext_resource type="Texture2D" uid="uid://x6ksr85epofe" path="res://assets/Pacient.png" id="2_hrkih"]
+[ext_resource type="Script" path="res://game/entities/pacient/pacient.gd" id="1_srfx8"]
+[ext_resource type="Texture2D" uid="uid://ddpk13olurc3" path="res://assets/patient_sprite_sheet.png" id="2_lfiyt"]
+
+[sub_resource type="Animation" id="Animation_k16nx"]
+resource_name = "good_ending"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wbbko"]
+_data = {
+"good_ending": SubResource("Animation_k16nx")
+}
 
 [node name="Pacient" type="StaticBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 0
+script = ExtResource("1_srfx8")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(8, 2)
 texture = ExtResource("1_rxfkd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(11, 0)
+position = Vector2(11, -5)
 rotation = -0.916298
-texture = ExtResource("2_hrkih")
+texture = ExtResource("2_lfiyt")
+hframes = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(0.5, -7, 7, -9.5, 15, -10, 18.5, -8, 16, -5.5, 15, -2, 21.5, -2, 26, -0.5, 29.5, 2, 34.5, 3.5, 32, 9.5, 28, 14.5, 22.5, 14.5, 17, 11, 0, 11, -11, 4, -7.5, -1.5, -13.5, -7, -7.5, -12.5, -5.5, -11)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wbbko")
+}

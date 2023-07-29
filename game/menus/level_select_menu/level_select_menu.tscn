@@ -1,0 +1,127 @@
+[gd_scene load_steps=9 format=3 uid="uid://dokf5a7owb8vx"]
+
+[ext_resource type="Script" path="res://game/menus/level_select_menu/level_select_menu.gd" id="1_6fyhl"]
+[ext_resource type="Texture2D" uid="uid://n0xdhrut8smx" path="res://assets/white_spacing.png" id="2_3gsnj"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="3_hv6d3"]
+[ext_resource type="Texture2D" uid="uid://bu80r7rolexmc" path="res://assets/menus/button.png" id="4_uq6s3"]
+[ext_resource type="Texture2D" uid="uid://rw56157ehcjc" path="res://assets/menus/button_hover.png" id="5_c4rs1"]
+[ext_resource type="Texture2D" uid="uid://wfhskj52xns5" path="res://assets/menus/button_disabled.png" id="6_ard27"]
+[ext_resource type="Texture2D" uid="uid://bckesweu3q3ou" path="res://assets/menus/back_button.png" id="7_sbhs0"]
+[ext_resource type="Texture2D" uid="uid://ds7vwt1hcy4nc" path="res://assets/menus/back_button_hover.png" id="8_oohvj"]
+
+[node name="LevelSelectMenu" type="CanvasLayer"]
+script = ExtResource("1_6fyhl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -16.0
+offset_top = -6.0
+offset_right = 656.0
+offset_bottom = 372.0
+texture = ExtResource("2_3gsnj")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 60.0
+offset_top = 112.0
+offset_right = 580.0
+offset_bottom = 312.0
+theme = ExtResource("3_hv6d3")
+theme_override_constants/separation = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Level1" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("4_uq6s3")
+texture_hover = ExtResource("5_c4rs1")
+texture_disabled = ExtResource("6_ard27")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Level1"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level2" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("4_uq6s3")
+texture_hover = ExtResource("5_c4rs1")
+texture_disabled = ExtResource("6_ard27")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Level2"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 80
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level3" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("4_uq6s3")
+texture_hover = ExtResource("5_c4rs1")
+texture_disabled = ExtResource("6_ard27")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Level3"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 80
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level4" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("4_uq6s3")
+texture_hover = ExtResource("5_c4rs1")
+texture_disabled = ExtResource("6_ard27")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/Level4"]
+custom_minimum_size = Vector2(104, 104)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 80
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -39.0
+offset_right = 70.0
+offset_bottom = -24.0
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(0, 15)
+texture_normal = ExtResource("7_sbhs0")
+texture_hover = ExtResource("8_oohvj")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

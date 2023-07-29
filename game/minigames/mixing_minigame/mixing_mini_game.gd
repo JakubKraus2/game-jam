@@ -3,7 +3,7 @@ extends CanvasLayer
 
 
 var flask_big = load("res://game/minigames/mixing_minigame/flask_big.tscn")
-var generated_substance = load("res://game/objects/substances/test_substance.tscn")
+var generated_substance = load("res://game/objects/substances/substance.tscn")
 var progress_box = load("res://game/minigames/mixing_minigame/progress_box.tscn")
 var space = 104
 var color_icon_spacing = 32

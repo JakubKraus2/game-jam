@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dxj0hix8hj2pc"]
 
-[ext_resource type="Script" path="res://game/objects/substances/test_substance.gd" id="1_wcy1o"]
+[ext_resource type="Script" path="res://game/objects/substances/substance.gd" id="1_wcy1o"]
 [ext_resource type="Texture2D" uid="uid://ppual5esvrsu" path="res://assets/objects/erlenmeyer_flask.png" id="2_5kuqm"]
 [ext_resource type="Texture2D" uid="uid://7ehh6cv3ostn" path="res://assets/objects/flask_insides.png" id="2_f3sf7"]
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="3_ftwtb"]

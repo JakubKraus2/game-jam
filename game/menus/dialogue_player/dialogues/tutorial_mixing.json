@@ -1,0 +1,9 @@
+[
+	{ "text": "You do the mixing here :)"},
+    { "text": "Grab the flasks by pressing left click button and rotate them using mouse wheel."},
+    { "text": "Right bottom corner shows the substance's names and how much of the substance you got in the resulting beaker."},
+    { "text": "The percentage will increase depending on how much you poured."},
+    { "text": "Your task is to try to get all the percentages as close as possible to 100%"},
+    { "text": "If you mix the wrong substances, my patient can get hurt."},
+    { "text": "No stress scooter."}
+]

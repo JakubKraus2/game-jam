@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt3np3s7rjybf"]
+[gd_scene load_steps=12 format=3 uid="uid://dt3np3s7rjybf"]
 
 [ext_resource type="Texture2D" uid="uid://c3r1orfi77ed8" path="res://assets/objects/doctor_chair.png" id="1_2jgkp"]
 [ext_resource type="Script" path="res://game/entities/doctor/doctor.gd" id="1_oe63a"]
-[ext_resource type="Texture2D" uid="uid://cfi6p8y18gswk" path="res://assets/doctor.png" id="2_87e1m"]
+[ext_resource type="Texture2D" uid="uid://c06jsvjwme82i" path="res://assets/doctor_sprite_sheet.png" id="2_uldwi"]
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="4_2smei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjt53"]
@@ -12,15 +12,89 @@ size = Vector2(14, 30.6)
 radius = 18.8
 height = 74.4
 
+[sub_resource type="Animation" id="Animation_3mu45"]
+resource_name = "bad_ending"
+length = 4.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+}
+
+[sub_resource type="Animation" id="Animation_o11gh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_nh4qn"]
+resource_name = "bad_ending_droplet"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [34, 35, 36, 37, 38, 39]
+}
+
+[sub_resource type="Animation" id="Animation_qimyh"]
+resource_name = "good_ending"
+length = 3.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.55, 2.7, 2.85, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [40, 41, 42, 43, 40, 41, 42, 43, 40, 41, 42, 43, 40, 41, 42, 43, 40, 41, 42, 43, 40, 41, 42, 43, 44, 45, 46, 47]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8vdwh"]
+_data = {
+"RESET": SubResource("Animation_o11gh"),
+"bad_ending": SubResource("Animation_3mu45"),
+"bad_ending_droplet": SubResource("Animation_nh4qn"),
+"good_ending": SubResource("Animation_qimyh")
+}
+
 [node name="Doctor" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_oe63a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(10, -19)
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_87e1m")
+texture = ExtResource("2_uldwi")
+hframes = 20
+vframes = 3
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(0, 25)
@@ -77,6 +151,9 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vdwgu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8vdwh")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

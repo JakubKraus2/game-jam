@@ -1,96 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://fcapplqaty8o"]
+[gd_scene load_steps=8 format=3 uid="uid://fcapplqaty8o"]
 
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="1_a5wrl"]
 [ext_resource type="Texture2D" uid="uid://n0xdhrut8smx" path="res://assets/white_spacing.png" id="2_e307x"]
-
-[sub_resource type="Animation" id="Animation_to8t3"]
-resource_name = "victory"
-length = 3.0
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Line:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Line:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.15, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(43.5, 1e-05), Vector2(43.5, 4.55), Vector2(43.5, 8.66), Vector2(43.5, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Line:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.15, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Label:self_modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(2.35, 2.95),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Label:text")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["Success"]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Label:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-52.72, 161.31), Vector2(-61.045, 162.605), Vector2(-58.88, 161.165), Vector2(-58.1, 160.69)]
-}
+[ext_resource type="Texture2D" uid="uid://gp4aiir5hw0s" path="res://assets/black_spacing.png" id="3_tonj6"]
 
 [sub_resource type="Animation" id="Animation_ecu8o"]
 length = 0.001
@@ -190,10 +102,123 @@ tracks/6/path = NodePath("Label:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-52.72, 161.31), Vector2(-61.045, 162.605), Vector2(-58.88, 161.165), Vector2(-58.1, 160.69)]
+"values": [Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-58, 165), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-58, 165), Vector2(-58.06, 165.615), Vector2(-58.06, 165.615), Vector2(-52.72, 161.31), Vector2(-61.045, 162.605), Vector2(-58.88, 161.165), Vector2(-58.1, 160.69)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/path = NodePath("TextureRect:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_to8t3"]
+resource_name = "victory"
+length = 3.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Line:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(43.5, 1e-05), Vector2(43.5, 4.55), Vector2(43.5, 8.66), Vector2(43.5, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Line:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.15, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.35, 2.95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Success"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58, 165), Vector2(-55.71, 159.955), Vector2(-49.02, 156.38), Vector2(-53.46, 165.68), Vector2(-56.265, 161.96), Vector2(-49.21, 167.67), Vector2(-58.06, 165.615), Vector2(-52.72, 161.31), Vector2(-61.045, 162.605), Vector2(-58.88, 161.165), Vector2(-58.1, 160.69)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/path = NodePath("TextureRect:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3tn0b"]
@@ -205,6 +230,14 @@ _data = {
 
 [node name="GameOverScreen" type="CanvasLayer"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -138.0
+offset_top = -94.0
+offset_right = 778.0
+offset_bottom = 454.0
+texture = ExtResource("3_tonj6")
+
 [node name="Label" type="Label" parent="."]
 visible = false
 anchors_preset = 8
@@ -212,10 +245,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -378.0
-offset_top = -15.0
-offset_right = 370.0
-offset_bottom = 61.0
+offset_left = -375.71
+offset_top = -20.045
+offset_right = 372.29
+offset_bottom = 55.955
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -223,7 +256,7 @@ theme = ExtResource("1_a5wrl")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 80
-text = "Success"
+text = "Do no harm"
 horizontal_alignment = 1
 uppercase = true
 
