@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq66ltuh2r55g"]
+
+[ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="1_yjbrp"]
+[ext_resource type="PackedScene" uid="uid://uhuuva6ixau3" path="res://game/tilemaps/tile_map.tscn" id="2_03ulu"]
+[ext_resource type="PackedScene" uid="uid://duequn7bci144" path="res://game/entities/player/player.tscn" id="3_6ksou"]
+[ext_resource type="PackedScene" uid="uid://dxebgtalcy47d" path="res://game/entities/pacient/pacient.tscn" id="4_u3t0a"]
+[ext_resource type="PackedScene" uid="uid://dt3np3s7rjybf" path="res://game/entities/doctor/doctor.tscn" id="5_aaaug"]
+
+[node name="LevelTutorial" type="Node2D"]
+
+[node name="Room" parent="." instance=ExtResource("1_yjbrp")]
+
+[node name="TileMap" parent="." instance=ExtResource("2_03ulu")]
+scale = Vector2(2, 2)
+layer_0/tile_data = PackedInt32Array(327680, 3, 0, 393216, 3, 0, 458752, 3, 0, 327699, 3, 0, 393235, 3, 0, 458771, 3, 0)
+
+[node name="Player" parent="." instance=ExtResource("3_6ksou")]
+position = Vector2(234, 247)
+
+[node name="Pacient" parent="." instance=ExtResource("4_u3t0a")]
+position = Vector2(302, 237)
+
+[node name="Doctor" parent="." instance=ExtResource("5_aaaug")]
+position = Vector2(294, 250)

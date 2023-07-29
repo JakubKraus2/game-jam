@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://djbmg5rn10ixd"]
+
+[ext_resource type="Script" path="res://game/menus/dialogue_player/dialogue_player.gd" id="1_fetiu"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_33swp"]
+[ext_resource type="Texture2D" uid="uid://bx3v7qvr7hgji" path="res://assets/menus/dialogue_player.png" id="3_ou12r"]
+
+[node name="DialoguePlayer" type="CanvasLayer"]
+script = ExtResource("1_fetiu")
+dialogue_file = "res://game/menus/dialogue_player/dialogues/test_dialogue.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -112.0
+offset_right = 296.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_33swp")
+texture = ExtResource("3_ou12r")
+patch_margin_left = 4
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Text" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 578.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 2
+
+[node name="CharTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="CharTimer" to="." method="_on_char_timer_timeout"]
