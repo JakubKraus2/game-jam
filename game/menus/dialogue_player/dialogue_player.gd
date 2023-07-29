@@ -2,6 +2,7 @@ extends CanvasLayer
 
 
 @export_file("*.json") var dialogue_file
+@export var player = Node2D
 
 var dialogues = []
 var current_dialogue_index = 0
@@ -18,8 +19,6 @@ func _process(delta):
 	$NinePatchRect/Text.text = display
 
 func _input(event):
-	if event.is_action_pressed("interact"):
-		play()
 	if !is_active:
 		return
 	if event.is_pressed() && current_char >= len(dialogues[current_dialogue_index]["text"]):
@@ -29,6 +28,7 @@ func _input(event):
 func play():
 	if is_active:
 		return
+	player.can_move = false
 	dialogues = load_dialogues()
 	is_active = true
 	$NinePatchRect.visible = true
@@ -42,6 +42,7 @@ func next_line():
 	current_dialogue_index += 1
 	if current_dialogue_index >= len(dialogues):
 		queue_free()
+		player.can_move = true
 		return
 
 func load_dialogues():

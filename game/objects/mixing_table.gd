@@ -19,9 +19,9 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("put") && playing_mini_game == false:
+		playing_mini_game = true
 		var mixing_mini_game_instance = mixing_mini_game.instantiate()
 		add_child(mixing_mini_game_instance)
-		playing_mini_game = true
 
 
 func _on_area_2d_body_entered(body):

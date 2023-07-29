@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_3y6w1"]
 [ext_resource type="PackedScene" uid="uid://dcafk723wfvb2" path="res://game/objects/door.tscn" id="3_q3uw1"]
 [ext_resource type="PackedScene" uid="uid://duequn7bci144" path="res://game/entities/player/player.tscn" id="4_e5qbd"]
-[ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/test_substance.tscn" id="5_xid1p"]
+[ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/substance.tscn" id="5_xid1p"]
 [ext_resource type="PackedScene" uid="uid://dkfikavmlfpoh" path="res://game/objects/substance_table.tscn" id="6_fra6e"]
 [ext_resource type="PackedScene" uid="uid://bkbml5e8sfjbe" path="res://game/objects/mixing_table.tscn" id="7_60go2"]
 [ext_resource type="PackedScene" uid="uid://dxebgtalcy47d" path="res://game/entities/pacient/pacient.tscn" id="8_sov86"]

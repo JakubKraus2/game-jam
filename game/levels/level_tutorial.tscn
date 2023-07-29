@@ -1,12 +1,152 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq66ltuh2r55g"]
+[gd_scene load_steps=16 format=3 uid="uid://bq66ltuh2r55g"]
 
+[ext_resource type="Script" path="res://game/levels/level_tutorial.gd" id="1_swhhx"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="1_yjbrp"]
 [ext_resource type="PackedScene" uid="uid://uhuuva6ixau3" path="res://game/tilemaps/tile_map.tscn" id="2_03ulu"]
 [ext_resource type="PackedScene" uid="uid://duequn7bci144" path="res://game/entities/player/player.tscn" id="3_6ksou"]
 [ext_resource type="PackedScene" uid="uid://dxebgtalcy47d" path="res://game/entities/pacient/pacient.tscn" id="4_u3t0a"]
 [ext_resource type="PackedScene" uid="uid://dt3np3s7rjybf" path="res://game/entities/doctor/doctor.tscn" id="5_aaaug"]
+[ext_resource type="PackedScene" uid="uid://djbmg5rn10ixd" path="res://game/menus/dialogue_player/dialogue_player.tscn" id="6_vrlsc"]
+[ext_resource type="Script" path="res://game/levels/DoctorTalkArea.gd" id="7_2jcna"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="7_i7tpv"]
+[ext_resource type="PackedScene" uid="uid://dkfikavmlfpoh" path="res://game/objects/substance_table.tscn" id="9_5gtcb"]
+[ext_resource type="PackedScene" uid="uid://bkbml5e8sfjbe" path="res://game/objects/mixing_table.tscn" id="10_mt405"]
+[ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/substance.tscn" id="12_0hvex"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_birh7"]
+radius = 25.0
+height = 134.0
+
+[sub_resource type="Animation" id="Animation_f40nw"]
+resource_name = "spawn_tables"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubstanceTable:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MixingTable:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TestSubstance:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TestSubstance2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TestSubstance3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubstanceTable:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(547, 156)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MixingTable:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(488, 156)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TestSubstance:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(416, 198)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TestSubstance2:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(484, 240)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("TestSubstance3:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(572, 252.355)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpw6r"]
+_data = {
+"spawn_tables": SubResource("Animation_f40nw")
+}
 
 [node name="LevelTutorial" type="Node2D"]
+script = ExtResource("1_swhhx")
 
 [node name="Room" parent="." instance=ExtResource("1_yjbrp")]
 
@@ -15,10 +155,88 @@ scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(327680, 3, 0, 393216, 3, 0, 458752, 3, 0, 327699, 3, 0, 393235, 3, 0, 458771, 3, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_6ksou")]
-position = Vector2(234, 247)
+position = Vector2(200, 247)
 
 [node name="Pacient" parent="." instance=ExtResource("4_u3t0a")]
 position = Vector2(302, 237)
 
 [node name="Doctor" parent="." instance=ExtResource("5_aaaug")]
 position = Vector2(294, 250)
+
+[node name="DoctorTalkArea" type="Area2D" parent="."]
+script = ExtResource("7_2jcna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoctorTalkArea"]
+position = Vector2(296, 251)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_birh7")
+
+[node name="Label" type="Label" parent="DoctorTalkArea"]
+visible = false
+z_index = 10
+offset_left = 201.0
+offset_top = 160.0
+offset_right = 383.0
+offset_bottom = 186.0
+theme = ExtResource("7_i7tpv")
+theme_override_font_sizes/font_size = 24
+text = "[E]"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="DoctorTalkArea"]
+visible = false
+z_index = 10
+offset_left = 201.0
+offset_top = 181.0
+offset_right = 383.0
+offset_bottom = 207.0
+theme = ExtResource("7_i7tpv")
+theme_override_font_sizes/font_size = 24
+text = "Talk"
+horizontal_alignment = 1
+
+[node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("9_5gtcb")]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.285714)
+position = Vector2(897, 156)
+mixing_table = NodePath("../MixingTable")
+
+[node name="MixingTable" parent="." node_paths=PackedStringArray("substance_table") instance=ExtResource("10_mt405")]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0.285714)
+position = Vector2(838, 156)
+substance_table = NodePath("../SubstanceTable")
+
+[node name="TestSubstance" parent="." instance=ExtResource("12_0hvex")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(766, 198)
+substance_name = "Gulas"
+substance_color = Color(0.847059, 0.352941, 0.772549, 0.588235)
+
+[node name="TestSubstance2" parent="." instance=ExtResource("12_0hvex")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(834, 240)
+substance_name = "Svickova"
+substance_color = Color(0.364706, 0.560784, 0.447059, 0.470588)
+
+[node name="TestSubstance3" parent="." instance=ExtResource("12_0hvex")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(922, 252.355)
+substance_name = "Ryze"
+substance_color = Color(0.270588, 0.647059, 0.886275, 0.784314)
+
+[node name="DialoguePlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_vrlsc")]
+player = NodePath("../Player")
+
+[node name="DialoguePlayerMinigame" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_vrlsc")]
+player = NodePath("../Player")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xpw6r")
+}
+
+[connection signal="child_exiting_tree" from="." to="DoctorTalkArea" method="_on_level_tutorial_child_exiting_tree"]
+[connection signal="body_entered" from="DoctorTalkArea" to="DoctorTalkArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DoctorTalkArea" to="DoctorTalkArea" method="_on_body_exited"]
+[connection signal="child_entered_tree" from="MixingTable" to="." method="_on_mixing_table_child_entered_tree"]
