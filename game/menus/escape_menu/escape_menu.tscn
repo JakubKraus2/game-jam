@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3gd77vvbvrub"]
+[gd_scene load_steps=11 format=3 uid="uid://c3gd77vvbvrub"]
 
 [ext_resource type="Texture2D" uid="uid://n0xdhrut8smx" path="res://assets/white_spacing.png" id="1_c01vp"]
 [ext_resource type="Script" path="res://game/menus/escape_menu/escape_menu.gd" id="1_hsvnp"]
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="3_tt2ts"]
+[ext_resource type="Texture2D" uid="uid://choqyraw1mrlg" path="res://assets/menus/escape_menu/button_resume.png" id="4_7b10j"]
+[ext_resource type="Texture2D" uid="uid://ru3m6qftdlk5" path="res://assets/menus/escape_menu/button_resume_hover.png" id="5_lsm8e"]
+[ext_resource type="Texture2D" uid="uid://doogfm48r0fqw" path="res://assets/menus/escape_menu/button_exit.png" id="6_2a8o8"]
+[ext_resource type="Texture2D" uid="uid://c6yjdxdiihp8j" path="res://assets/menus/escape_menu/button_exit_hover.png" id="7_8hf8d"]
 
 [sub_resource type="Animation" id="Animation_6ggqx"]
 resource_name = "open"
@@ -18,7 +22,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(640, 0), Vector2(640, 110)]
+"values": [Vector2(640, 0), Vector2(640, 140)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -30,7 +34,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 210), Vector2(0, 147)]
+"values": [Vector2(0, 180), Vector2(0, 110)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -47,11 +51,11 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect/HBoxContainer/Label:visible")
+tracks/3/path = NodePath("TextureRect/HBoxContainer:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -71,7 +75,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(640, 110), Vector2(640, 0)]
+"values": [Vector2(640, 140), Vector2(640, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -83,7 +87,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 147), Vector2(0, 210)]
+"values": [Vector2(0, 110), Vector2(0, 180)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -100,7 +104,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("TextureRect/HBoxContainer/Label:visible")
+tracks/3/path = NodePath("TextureRect/HBoxContainer:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -126,29 +130,53 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = 30.0
-offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_c01vp")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+visible = false
 layout_mode = 0
-offset_left = 60.0
-offset_right = 580.0
+offset_left = 68.0
+offset_top = 30.0
+offset_right = 572.0
 offset_bottom = 110.0
 theme = ExtResource("3_tt2ts")
+theme_override_constants/separation = 72
 
 [node name="Label" type="Label" parent="TextureRect/HBoxContainer"]
-visible = false
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.301961, 0.301961, 1)
+theme_override_colors/font_outline_color = Color(1, 0.301961, 0.301961, 1)
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 72
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="ResumeButton" type="TextureButton" parent="TextureRect/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_7b10j")
+texture_hover = ExtResource("5_lsm8e")
+stretch_mode = 4
+
+[node name="QuitButton" type="TextureButton" parent="TextureRect/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+texture_normal = ExtResource("6_2a8o8")
+texture_hover = ExtResource("7_8hf8d")
+stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_twvtx")
 }
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/HBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="TextureRect/HBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
