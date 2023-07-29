@@ -4,12 +4,14 @@ class_name Substance
 
 var player
 @export var substance_name = "Test"
+@export var substance_color = Color(1, 1, 1, 1)
 @onready var interaction_text = $Label
 @onready var substance_name_text = $Label2
 @onready var animation_player = $AnimationPlayer
 @onready var collision = $CollisionShape2D
 @onready var collision_checker = $Area2D
 @onready var sprite = $Sprite2D
+@onready var insides = $Insides
 
 
 func _ready():
@@ -18,6 +20,7 @@ func _ready():
 	substance_name_text.visible = false #set text to invisible
 	interaction_text.text = "[" + InputMap.action_get_events("interact")[0].as_text() + "]" #set text to interaction
 	substance_name_text.text = substance_name #set text to sbbstance name
+	insides.set_self_modulate(substance_color)
 	set_process(false) #process is turned off for optimalization
 
 func _process(delta): #is called every frame
@@ -28,10 +31,11 @@ func _process(delta): #is called every frame
 		if get_parent().name != "Player" && !animation_player.is_playing(): #is player not the current parent?
 			reparent(player) #change current parent to player
 			player.can_pick_up = false
-			position = Vector2(0, -16) #set position
+			position = Vector2(0, -14) #set position
 			interaction_text.visible = false #set text to invisible
 			substance_name_text.visible = false #set text to invisible
-			sprite.offset = Vector2(0, 0)
+			sprite.offset = Vector2(0, -5)
+			insides.offset = Vector2(0, -5)
 			collision.position = Vector2(0, 0)
 			collision_checker.position = Vector2(0, 0)
 			interaction_text.position = Vector2(-49, -42)

@@ -5,8 +5,9 @@ extends StaticBody2D
 @onready var interaction_input_text = $Label
 @onready var interaction_text = $Label2
 @export var substance_table = Node2D
-var mixing_mini_game = load("res://game/minigames/mixing_mini_game.tscn")
+var mixing_mini_game = load("res://game/minigames/mixing_minigame/mixing_mini_game.tscn")
 var playing_mini_game = false
+var player
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
+	player = body
 	check_placements()
 
 func _on_area_2d_body_exited(body):
@@ -37,3 +39,7 @@ func check_placements():
 		interaction_text.visible = true
 		interaction_input_text.visible = true
 		set_process(true)
+	else:
+		interaction_text.visible = false
+		interaction_input_text.visible = false
+		set_process(false)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgp5lh34x7jne"]
+
+[ext_resource type="Texture2D" uid="uid://dgeoij1h000b0" path="res://assets/objects/bookcase_side.png" id="1_aeqmd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsc8q"]
+size = Vector2(28, 93)
+
+[node name="BookcaseSide" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="BookcaseSide" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_aeqmd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-5, -2.5)
+shape = SubResource("RectangleShape2D_nsc8q")
