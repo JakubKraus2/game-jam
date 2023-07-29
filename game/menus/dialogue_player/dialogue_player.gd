@@ -22,7 +22,7 @@ func _input(event):
 		play()
 	if !is_active:
 		return
-	if event.is_action_pressed("put") && current_char >= len(dialogues[current_dialogue_index]["text"]):
+	if event.is_pressed() && current_char >= len(dialogues[current_dialogue_index]["text"]):
 		next_line()
 
 

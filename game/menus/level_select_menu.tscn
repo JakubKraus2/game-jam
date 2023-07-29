@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dokf5a7owb8vx"]
+[gd_scene load_steps=7 format=3 uid="uid://dokf5a7owb8vx"]
 
 [ext_resource type="Texture2D" uid="uid://bvhq6vyb5rpwy" path="res://assets/floor.png" id="1_r13mi"]
 [ext_resource type="Script" path="res://game/menus/level_select_menu.gd" id="1_ryc45"]
@@ -6,40 +6,6 @@
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_kvcpb"]
 [ext_resource type="Texture2D" uid="uid://rw56157ehcjc" path="res://assets/menus/button_hover.png" id="3_crdbl"]
 [ext_resource type="Texture2D" uid="uid://wfhskj52xns5" path="res://assets/menus/button_disabled.png" id="6_h5ty7"]
-[ext_resource type="Texture2D" uid="uid://gp4aiir5hw0s" path="res://assets/black_spacing.png" id="7_i1o28"]
-
-[sub_resource type="Animation" id="Animation_sbaj8"]
-resource_name = "load"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlackScreen:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BlackScreen:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7uc6"]
-_data = {
-"load": SubResource("Animation_sbaj8")
-}
 
 [node name="LevelSelectMenu" type="CanvasLayer"]
 script = ExtResource("1_ryc45")
@@ -114,18 +80,5 @@ theme_override_font_sizes/font_size = 64
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="BlackScreen" type="TextureRect" parent="."]
-offset_left = -138.0
-offset_top = -94.0
-offset_right = 778.0
-offset_bottom = 454.0
-texture = ExtResource("7_i1o28")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "load"
-libraries = {
-"": SubResource("AnimationLibrary_r7uc6")
-}
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level1" to="." method="_on_texture_button_pressed"]

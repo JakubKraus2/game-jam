@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 MainCamera="*res://game/entities/player/main_camera.tscn"
 Global="*res://game/globals/global.gd"
+PseudoLoading="*res://game/menus/pseudo_loading.tscn"
 
 [display]
 
