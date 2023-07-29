@@ -2,11 +2,12 @@
 	{ "text": "Welcome to your first day as my assistant."},
 	{ "text": "I know you must be nervous considering this is your first day, but don't sweat it!"},
 	{ "text": "Let me show you the ropes."},
-	{ "text": "I'm operating a patient and I need you to mix correct substances in order to make the operation succesful."},
+	{ "text": "I'm doing the hard work and your job is to pass me the correct mix of substances."},
 	{ "text": "Sounds easy, right? Well..."},
 	{ "text": "I'm pretty clumsy and always forget where I put the substances."},
-	{ "text": "Your job is to find and mix them."},
+	{ "text": "--Also, my mother sometimes does the cleaning.."},
+	{ "text": "Your job is to find them and create a new substance."},
 	{ "text": "Place found substances on the table and mix them. Then bring the finished product to me."},
-	{ "text": "In order to make things easier, I went out of my way and already found the substances in your place."},
+	{ "text": "In order to make things easier, I went out of my way and already found the substances for you."},
 	{ "text": "Now you just need to mix them, Good luck!"}
 ]

@@ -1,10 +1,9 @@
 [
-	{ "text": "Here you need to mix found substances into one."},
-    { "text": "You can grab the flasks by pressing left click and rotate them by mouse wheel."},
-    { "text": "Pravy dolni roh ukazuje názvy substancí a jejich procenta."},
-    { "text": "Procenta substance se zvětší podle toho, kolik si toho vlil"},
-    { "text": "Tvůj úkol je snažit se, aby všechny procenta byla co nejblíž stovce"},
-    { "text": "Dej si ale pozor, procenta se zvětšují i když si vybral špatnou substanci na mýchání."},
-    { "text": "jestliže namýcháš špatnou substanci, pacient může umřít."},
-    { "text": "No stress."}
+	{ "text": "You do the mixing here :)"},
+    { "text": "Grab the flasks by pressing left click button and rotate them using mouse wheel."},
+    { "text": "Right bottom corner shows the substance's names and how much of the substance you got in the resulting beaker."},
+    { "text": "The percentage will increase depending on how much you poured."},
+    { "text": "Your task is to try to get all the percentages as close as possible to 100%"},
+    { "text": "If you mix the wrong substances, my patient can get hurt."},
+    { "text": "No stress scooter."}
 ]
