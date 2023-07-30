@@ -80,6 +80,21 @@ patient = NodePath("../Pacient")
 [node name="Furniture" type="Node2D" parent="."]
 position = Vector2(-427, -120)
 
+[node name="PowerOutlet" type="Sprite2D" parent="Furniture"]
+position = Vector2(-28, 258)
+scale = Vector2(2, 2)
+texture = ExtResource("20_kethu")
+
+[node name="PowerOutlet2" type="Sprite2D" parent="Furniture"]
+position = Vector2(757, 255)
+scale = Vector2(2, 2)
+texture = ExtResource("20_kethu")
+
+[node name="PowerOutlet3" type="Sprite2D" parent="Furniture"]
+position = Vector2(1016, 254)
+scale = Vector2(2, 2)
+texture = ExtResource("20_kethu")
+
 [node name="Window" type="Sprite2D" parent="Furniture"]
 position = Vector2(638, 221)
 scale = Vector2(1.5, 1.5)
@@ -123,9 +138,6 @@ texture = ExtResource("15_htror")
 [node name="Bookcase2" parent="Furniture" instance=ExtResource("14_4g8rx")]
 position = Vector2(343, 243)
 
-[node name="Table2" parent="Furniture" instance=ExtResource("20_ww35i")]
-position = Vector2(-91, 258)
-
 [node name="BookcaseSide2" parent="Furniture" instance=ExtResource("16_yxqhf")]
 position = Vector2(-172, 260)
 rotation = 3.14159
@@ -133,21 +145,6 @@ scale = Vector2(1, -1)
 
 [node name="RoundTable" parent="Furniture" instance=ExtResource("21_dl6jd")]
 position = Vector2(179, 268)
-
-[node name="PowerOutlet" type="Sprite2D" parent="Furniture"]
-position = Vector2(-45, 258)
-scale = Vector2(2, 2)
-texture = ExtResource("20_kethu")
-
-[node name="PowerOutlet2" type="Sprite2D" parent="Furniture"]
-position = Vector2(757, 255)
-scale = Vector2(2, 2)
-texture = ExtResource("20_kethu")
-
-[node name="PowerOutlet3" type="Sprite2D" parent="Furniture"]
-position = Vector2(1016, 254)
-scale = Vector2(2, 2)
-texture = ExtResource("20_kethu")
 
 [node name="Painting" type="Sprite2D" parent="Furniture"]
 position = Vector2(250, 221)
@@ -163,15 +160,15 @@ texture = ExtResource("24_f7jyf")
 [node name="Camera" parent="Furniture" instance=ExtResource("23_hnu1g")]
 position = Vector2(107, 393)
 
+[node name="Computer" parent="." instance=ExtResource("20_ww35i")]
+position = Vector2(-518, 138)
+hidden_substance_name = "Modra"
+hidden_substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
+
 [node name="TestSubstance" parent="." instance=ExtResource("5_xid1p")]
 position = Vector2(-59, 140)
 substance_name = "Zluta"
 substance_color = Color(0.694118, 0.560784, 0, 1)
-
-[node name="TestSubstance3" parent="." instance=ExtResource("5_xid1p")]
-position = Vector2(404, 161)
-substance_name = "Modra"
-substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
 
 [node name="GreenBox" parent="." instance=ExtResource("28_cxm8m")]
 position = Vector2(-522, 268)
