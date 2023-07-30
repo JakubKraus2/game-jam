@@ -177,5 +177,4 @@ substance_name = "Modra"
 substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
 
 [node name="MetalDetector" parent="." instance=ExtResource("27_axds2")]
-show_behind_parent = false
 position = Vector2(248, 173)

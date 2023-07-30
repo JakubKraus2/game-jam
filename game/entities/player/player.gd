@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 var speed := 200.0
+var slowness := 200.0
 var can_pick_up = true
 var can_move = true
 var side
@@ -13,7 +14,7 @@ func _physics_process(delta):
 
 func movement(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	side = speed * direction
+	side = direction * slowness
 	if can_move:
 		if side == Vector2.ZERO:
 			$AnimationTree.get("parameters/playback").travel("Idle")

@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_88pfr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcyxw"]
+radius = 11.5
 height = 50.0
 
 [sub_resource type="Animation" id="Animation_e2ys5"]
@@ -188,16 +189,16 @@ animation = &"move_down"
 animation = &"move_up"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_spumm"]
+auto_triangles = false
 blend_point_0/node = SubResource("AnimationNodeAnimation_jxjvg")
 blend_point_0/pos = Vector2(-1, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_b7nsg")
 blend_point_1/pos = Vector2(1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_wvjke")
-blend_point_2/pos = Vector2(0, 1.1)
+blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_xqba2")
-blend_point_3/pos = Vector2(0, -1.1)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
+blend_point_3/pos = Vector2(0, -1)
+triangles = PackedInt32Array(0, 1, 2, 0, 1, 3)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wr1vw"]
@@ -209,7 +210,6 @@ states/Direction/position = Vector2(411, 100)
 transitions = ["Start", "Direction", SubResource("AnimationNodeStateMachineTransition_wr1vw")]
 
 [node name="MetalDetector" type="Area2D"]
-show_behind_parent = true
 script = ExtResource("1_fk6wt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -218,7 +218,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_axxgl")
 offset = Vector2(-8, 2)
 hframes = 4
-frame = 3
 
 [node name="SpriteIdle" type="Sprite2D" parent="."]
 clip_children = 2
@@ -230,7 +229,7 @@ hframes = 4
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 2)
+position = Vector2(-8, 9)
 rotation = 1.5708
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_qcyxw")

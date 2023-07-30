@@ -18,6 +18,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("interact"):
 		if get_parent().name != "Player":
 			reparent(player)
+			player.speed = 140
+			player.slowness = 0.7
 			position = Vector2(7, 8)
 			$Label.visible = false
 			$Label2.visible = false
@@ -25,6 +27,8 @@ func _process(delta):
 			$Sprite2D.visible = true
 		else:
 			reparent(get_parent().owner)
+			player.speed = 200
+			player.slowness = 200
 			$SpriteIdle.visible = true
 			$Sprite2D.visible = false
 

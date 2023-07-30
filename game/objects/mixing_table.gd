@@ -35,7 +35,7 @@ func _on_area_2d_body_exited(body):
 
 
 func check_placements():
-	if substance_table.placements.size() == 0 && $Area2D.has_overlapping_bodies():
+	if substance_table.substances.size() >= 2 && $Area2D.has_overlapping_bodies():
 		interaction_text.visible = true
 		interaction_input_text.visible = true
 		set_process(true)
