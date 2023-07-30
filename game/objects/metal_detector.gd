@@ -19,7 +19,7 @@ func _process(delta):
 		if get_parent().name != "Player":
 			reparent(player)
 			player.speed = 140
-			player.slowness = 0.7
+			player.get_node("AnimationTree").set("parameters/Movement/TimeScale/scale", 0.7)
 			position = Vector2(7, 8)
 			$Label.visible = false
 			$Label2.visible = false
@@ -28,7 +28,7 @@ func _process(delta):
 		else:
 			reparent(get_parent().owner)
 			player.speed = 200
-			player.slowness = 200
+			player.get_node("AnimationTree").set("parameters/Movement/TimeScale/scale", 1.0)
 			$SpriteIdle.visible = true
 			$Sprite2D.visible = false
 
