@@ -17,3 +17,4 @@ func _on_ready():
 			$GreenBox.position = Vector2(randi_range(-245, -80), randi_range(310, 210))
 		2:
 			$GreenBox.position = Vector2(randi_range(400, 530), randi_range(310, 210))
+	print($GreenBox.position)

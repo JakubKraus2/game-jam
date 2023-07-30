@@ -41,4 +41,4 @@ func _on_beep_sound_frequency_timer_timeout():
 
 
 func _on_object_detector_area_entered(area):
-	object_to_find.visible = true
+	object_to_find.found = true
