@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://7ee1jy8k7f5v"]
+
+[ext_resource type="Texture2D" uid="uid://n0xdhrut8smx" path="res://assets/white_spacing.png" id="1_a7dtl"]
+[ext_resource type="Script" path="res://game/minigames/pong_minigame/pong_player.gd" id="1_raqb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_giojw"]
+size = Vector2(20, 70)
+
+[node name="PongPlayer" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_raqb2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 4)
+texture = ExtResource("1_a7dtl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_giojw")
+
+[node name="BallChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BallChecker"]
+shape = SubResource("RectangleShape2D_giojw")
+
+[connection signal="body_entered" from="BallChecker" to="." method="_on_ball_checker_body_entered"]
