@@ -163,7 +163,7 @@ position = Vector2(107, 393)
 [node name="Computer" parent="." instance=ExtResource("20_ww35i")]
 position = Vector2(-518, 138)
 hidden_substance_name = "Modra"
-hidden_substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
+hidden_substance_color = Color(0.0784314, 0.470588, 0.768627, 0.588235)
 
 [node name="TestSubstance" parent="." instance=ExtResource("5_xid1p")]
 position = Vector2(-59, 140)

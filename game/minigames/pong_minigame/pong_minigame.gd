@@ -18,10 +18,11 @@ func _on_ready():
 func reset_ball():
 	if player_score < 3 && enemy_score < 3:
 		ball.can_move = false
-		ball.global_position = Vector2(320, 180)
+		ball.global_position = Vector2(310, 120)
 		$AnimationPlayer.play("cound_down")
 		await $AnimationPlayer.animation_finished
 		ball.can_move = true
+		ball.visible = true
 
 func check_results():
 	if player_score >= 3:
@@ -48,6 +49,7 @@ func show_hidden_substance():
 	hidden_substance_instance.substance_name = get_parent().hidden_substance_name
 	hidden_substance_instance.substance_color = get_parent().hidden_substance_color
 	hidden_substance_instance.insides.set_self_modulate(get_parent().hidden_substance_color)
+	hidden_substance_instance._ready()
 	
 
 func _on_border_body_entered(body):
@@ -57,11 +59,19 @@ func _on_border_body_entered(body):
 func _on_win_area_body_entered(body):
 	player_score += 1
 	$HBoxContainer/PlayerScore.text = str(player_score)
+	ball.visible = false
 	check_results()
 	reset_ball()
 
 func _on_lose_area_body_entered(body):
 	enemy_score += 1
 	$HBoxContainer/EnemyScore.text = str(enemy_score)
+	ball.visible = false
 	check_results()
 	reset_ball()
+
+
+func _on_back_button_pressed():
+	get_parent().playing_mini_game = false
+	queue_free()
+	get_parent().player.set_physics_process(true)

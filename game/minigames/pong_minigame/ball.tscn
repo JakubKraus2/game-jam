@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://game/minigames/pong_minigame/ball.gd" id="1_qg80k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h875k"]
-size = Vector2(16, 16)
+size = Vector2(8, 8)
 
 [node name="Ball" type="CharacterBody2D"]
 collision_layer = 16
@@ -12,6 +12,7 @@ collision_mask = 0
 script = ExtResource("1_qg80k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_5xapl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

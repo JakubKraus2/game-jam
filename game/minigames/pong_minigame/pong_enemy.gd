@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed = 300.0
+var speed = 200.0
 var can_move = true
 @export var ball = Node2D
 
@@ -21,7 +21,7 @@ func _on_ball_checker_body_entered(body):
 
 func _on_reaction_timer_timeout():
 	if can_move:
-		$ReactionTimer.start(randf_range(0.4, 0.8))
+		$ReactionTimer.start(randf_range(1.2, 1.4))
 	else:
 		$ReactionTimer.start(randf_range(1, 2))
 	can_move = !can_move
