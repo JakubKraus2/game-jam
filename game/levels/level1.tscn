@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d10ik3agmtbg1"]
+[gd_scene load_steps=28 format=3 uid="uid://d10ik3agmtbg1"]
 
 [ext_resource type="Script" path="res://game/levels/level1.gd" id="1_nwfgv"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_3y6w1"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://brwucdi57b8d3" path="res://assets/objects/painting.png" id="22_kmu12"]
 [ext_resource type="PackedScene" uid="uid://dutojn00tlgb5" path="res://game/objects/camera.tscn" id="23_hnu1g"]
 [ext_resource type="Texture2D" uid="uid://bwtko2jjet4k5" path="res://assets/objects/carpet.png" id="24_f7jyf"]
+[ext_resource type="PackedScene" uid="uid://b2wqc1sgnnx06" path="res://game/objects/metal_detector.tscn" id="27_axds2"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_nwfgv")
@@ -157,6 +158,9 @@ rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("24_f7jyf")
 
+[node name="Camera" parent="Furniture" instance=ExtResource("23_hnu1g")]
+position = Vector2(107, 393)
+
 [node name="TestSubstance" parent="." instance=ExtResource("5_xid1p")]
 position = Vector2(-59, 140)
 substance_name = "Zluta"
@@ -172,5 +176,6 @@ position = Vector2(404, 161)
 substance_name = "Modra"
 substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
 
-[node name="Camera" parent="." instance=ExtResource("23_hnu1g")]
-position = Vector2(-320, 273)
+[node name="MetalDetector" parent="." instance=ExtResource("27_axds2")]
+show_behind_parent = false
+position = Vector2(248, 173)
