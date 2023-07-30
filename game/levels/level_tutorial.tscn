@@ -251,6 +251,7 @@ libraries = {
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="." to="DoctorTalkArea" method="_on_level_tutorial_child_exiting_tree"]
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="DoctorTalkArea" to="DoctorTalkArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DoctorTalkArea" to="DoctorTalkArea" method="_on_body_exited"]
 [connection signal="child_entered_tree" from="MixingTable" to="." method="_on_mixing_table_child_entered_tree"]
