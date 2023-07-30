@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmntos4g43345"]
+
+[ext_resource type="Texture2D" uid="uid://blve2hnqsexij" path="res://assets/objects/green_box_lid.png" id="1_pvhbi"]
+[ext_resource type="Texture2D" uid="uid://48qrlbqkrglu" path="res://assets/objects/green_box.png" id="2_eihmg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngvxa"]
+size = Vector2(10, 9)
+
+[node name="GreenBox" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Lid" type="Sprite2D" parent="."]
+position = Vector2(17, 5)
+texture = ExtResource("1_pvhbi")
+
+[node name="Box" type="Sprite2D" parent="."]
+texture = ExtResource("2_eihmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_ngvxa")
