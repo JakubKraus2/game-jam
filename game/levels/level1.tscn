@@ -177,8 +177,9 @@ position = Vector2(404, 161)
 substance_name = "Modra"
 substance_color = Color(0.0509804, 0.462745, 0.756863, 0.654902)
 
-[node name="MetalDetector" parent="." instance=ExtResource("27_axds2")]
+[node name="MetalDetector" parent="." node_paths=PackedStringArray("object_to_find") instance=ExtResource("27_axds2")]
 position = Vector2(248, 173)
+object_to_find = NodePath("../GreenBox")
 
 [node name="GreenBox" parent="." instance=ExtResource("28_cxm8m")]
 position = Vector2(-557, 301)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2wqc1sgnnx06"]
+[gd_scene load_steps=18 format=3 uid="uid://b2wqc1sgnnx06"]
 
 [ext_resource type="Texture2D" uid="uid://bopy5c60y8i74" path="res://assets/objects/metal_detector_sprite_sheet.png" id="1_axxgl"]
 [ext_resource type="Script" path="res://game/objects/metal_detector.gd" id="1_fk6wt"]
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_88pfr"]
+[ext_resource type="AudioStream" uid="uid://1opsk2rcdmxd" path="res://sounds/metal_detector_beep.wav" id="4_6t5hb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcyxw"]
 radius = 11.5
@@ -267,5 +268,12 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/Direction/blend_position = Vector2(0.231629, 0.39869)
 
+[node name="BeepSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-18, 0)
+stream = ExtResource("4_6t5hb")
+
+[node name="BeepSoundFrequencyTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="BeepSoundFrequencyTimer" to="." method="_on_beep_sound_frequency_timer_timeout"]
