@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d10ik3agmtbg1"]
+[gd_scene load_steps=30 format=3 uid="uid://d10ik3agmtbg1"]
 
 [ext_resource type="Script" path="res://game/levels/level1.gd" id="1_nwfgv"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_3y6w1"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bwtko2jjet4k5" path="res://assets/objects/carpet.png" id="24_f7jyf"]
 [ext_resource type="PackedScene" uid="uid://b2wqc1sgnnx06" path="res://game/objects/metal_detector.tscn" id="27_axds2"]
 [ext_resource type="PackedScene" uid="uid://dmntos4g43345" path="res://game/objects/green_box.tscn" id="28_cxm8m"]
+[ext_resource type="PackedScene" uid="uid://dmgbp1r2tqxr1" path="res://game/objects/screw_driver.tscn" id="29_yibsy"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_nwfgv")
@@ -182,6 +183,9 @@ position = Vector2(248, 173)
 object_to_find = NodePath("../GreenBox")
 
 [node name="GreenBox" parent="." instance=ExtResource("28_cxm8m")]
-position = Vector2(-557, 301)
+position = Vector2(-522, 268)
+
+[node name="ScrewDriver" parent="." instance=ExtResource("29_yibsy")]
+position = Vector2(176, 177)
 
 [connection signal="ready" from="." to="." method="_on_ready"]

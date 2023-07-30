@@ -1,144 +1,18 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2wqc1sgnnx06"]
+[gd_scene load_steps=19 format=3 uid="uid://dmgbp1r2tqxr1"]
 
-[ext_resource type="Texture2D" uid="uid://bopy5c60y8i74" path="res://assets/objects/metal_detector_sprite_sheet.png" id="1_axxgl"]
-[ext_resource type="Script" path="res://game/objects/metal_detector.gd" id="1_fk6wt"]
-[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_88pfr"]
-[ext_resource type="AudioStream" uid="uid://1opsk2rcdmxd" path="res://sounds/metal_detector_beep.wav" id="4_6t5hb"]
+[ext_resource type="Texture2D" uid="uid://bcyk1hlqe3ogu" path="res://assets/objects/screw_driver_sprite_sheet.png" id="1_6uid2"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="1_isigy"]
+[ext_resource type="Script" path="res://game/objects/screw_driver.gd" id="1_uvfkr"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qcyxw"]
-radius = 11.5
-height = 50.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bqd0f"]
+height = 36.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mwy3"]
-radius = 28.0
-height = 100.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bk3c5"]
+radius = 26.0
+height = 86.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jgthn"]
-radius = 27.0
-height = 112.0
-
-[sub_resource type="Animation" id="Animation_e2ys5"]
-resource_name = "move_down"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:show_behind_parent")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_i33jl"]
+[sub_resource type="Animation" id="Animation_pl2yr"]
 resource_name = "move_left"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-8, 2)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:show_behind_parent")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_rnbxh"]
-resource_name = "move_right"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:show_behind_parent")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, 2)]
-}
-
-[sub_resource type="Animation" id="Animation_k4gxb"]
-resource_name = "move_up"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -162,7 +36,62 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-15, 0)]
+"values": [Vector2(-12, -0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:show_behind_parent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_v0yvx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_jykfk"]
+resource_name = "move_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -0.5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -177,12 +106,93 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hb1li"]
+[sub_resource type="Animation" id="Animation_m1edb"]
+resource_name = "move_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:show_behind_parent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_thi43"]
+resource_name = "move_down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:show_behind_parent")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e38gi"]
 _data = {
-"move_down": SubResource("Animation_e2ys5"),
-"move_left": SubResource("Animation_i33jl"),
-"move_right": SubResource("Animation_rnbxh"),
-"move_up": SubResource("Animation_k4gxb")
+"RESET": SubResource("Animation_v0yvx"),
+"move_down": SubResource("Animation_thi43"),
+"move_left": SubResource("Animation_pl2yr"),
+"move_right": SubResource("Animation_jykfk"),
+"move_up": SubResource("Animation_m1edb")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mlol8"]
@@ -215,35 +225,42 @@ blend_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wr1vw"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_o8rys"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mvkww"]
 states/Direction/node = SubResource("AnimationNodeBlendSpace2D_spumm")
 states/Direction/position = Vector2(411, 100)
 transitions = ["Start", "Direction", SubResource("AnimationNodeStateMachineTransition_wr1vw")]
 
-[node name="MetalDetector" type="Area2D"]
-script = ExtResource("1_fk6wt")
+[node name="ScrewDriver" type="Area2D"]
+script = ExtResource("1_uvfkr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(2, 2)
-texture = ExtResource("1_axxgl")
+texture = ExtResource("1_6uid2")
+offset = Vector2(0, 1)
 hframes = 4
-frame = 2
+frame = 3
 
 [node name="SpriteIdle" type="Sprite2D" parent="."]
 clip_children = 2
 z_index = 1
 scale = Vector2(2, 2)
-texture = ExtResource("1_axxgl")
-offset = Vector2(-8, 2)
+texture = ExtResource("1_6uid2")
 hframes = 4
-frame = 1
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 9)
 rotation = 1.5708
 scale = Vector2(2, 2)
-shape = SubResource("CapsuleShape2D_qcyxw")
+shape = SubResource("CapsuleShape2D_bqd0f")
+
+[node name="AreaChecker" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChecker"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bk3c5")
 
 [node name="Label" type="Label" parent="."]
 z_index = 10
@@ -251,7 +268,7 @@ offset_left = -49.0
 offset_top = -52.0
 offset_right = 49.0
 offset_bottom = -29.0
-theme = ExtResource("2_88pfr")
+theme = ExtResource("1_isigy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -261,48 +278,21 @@ offset_left = -69.0
 offset_top = -40.0
 offset_right = 69.0
 offset_bottom = -16.9999
-theme = ExtResource("2_88pfr")
+theme = ExtResource("1_isigy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ObjectDetector" type="Area2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectDetector"]
-position = Vector2(-10, 4)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_4mwy3")
-
-[node name="AreaChecker" type="Area2D" parent="."]
-position = Vector2(-8, 9)
-collision_layer = 16
-collision_mask = 16
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChecker"]
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_jgthn")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_hb1li")
+"": SubResource("AnimationLibrary_e38gi")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_o8rys")
+tree_root = SubResource("AnimationNodeStateMachine_mvkww")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/Direction/blend_position = Vector2(0.231629, 0.39869)
-
-[node name="BeepSound" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(-18, 0)
-stream = ExtResource("4_6t5hb")
-
-[node name="BeepSoundFrequencyTimer" type="Timer" parent="."]
+parameters/Direction/blend_position = Vector2(0.0255591, 0.619651)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="ready" from="." to="." method="_on_ready"]
-[connection signal="area_entered" from="ObjectDetector" to="." method="_on_object_detector_area_entered"]
-[connection signal="timeout" from="BeepSoundFrequencyTimer" to="." method="_on_beep_sound_frequency_timer_timeout"]

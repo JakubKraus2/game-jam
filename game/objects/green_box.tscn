@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmntos4g43345"]
+[gd_scene load_steps=5 format=3 uid="uid://dmntos4g43345"]
 
 [ext_resource type="Texture2D" uid="uid://blve2hnqsexij" path="res://assets/objects/green_box_lid.png" id="1_pvhbi"]
 [ext_resource type="Texture2D" uid="uid://48qrlbqkrglu" path="res://assets/objects/green_box.png" id="2_eihmg"]
@@ -6,7 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngvxa"]
 size = Vector2(10, 9)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_oaik8"]
+radius = 19.5064
+
 [node name="GreenBox" type="StaticBody2D"]
+visible = false
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 0
@@ -21,3 +25,10 @@ texture = ExtResource("2_eihmg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_ngvxa")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_oaik8")
