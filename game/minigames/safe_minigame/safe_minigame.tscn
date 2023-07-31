@@ -165,6 +165,15 @@ grow_vertical = 2
 theme = ExtResource("6_7g2gv")
 theme_override_font_sizes/font_size = 48
 
+[node name="Button" type="Button" parent="."]
+offset_right = 136.0
+offset_bottom = 42.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("5_x0dvy")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
@@ -174,3 +183,4 @@ theme_override_font_sizes/font_size = 48
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/Button7" to="." method="_on_button_7_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/Button8" to="." method="_on_button_8_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

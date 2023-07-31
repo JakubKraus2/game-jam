@@ -11,6 +11,7 @@ func _on_ready():
 	$Sprite2D.visible = false
 
 func _process(delta):
+	check_for_areas()
 	if Input.is_action_just_pressed("interact"):
 		if get_parent().name != "Player":
 			reparent(player)
