@@ -97,8 +97,8 @@ func generate_substance():
 				get_parent().substance_table.placements.append(i)
 	get_parent().substance_table.substances.append(generated_substance_instance)
 	generated_substance_instance.substance_color = Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1), randf_range(0.3, 1))
-	generated_substance_instance.substance_name = mixture_of + " Mixture"
-	if generated_substance_instance.substance_name == " Dirty Water Chlorine Mixture" || generated_substance_instance.substance_name == " Chlorine Dirty Water Mixture":
+	generated_substance_instance.substance_name = "Mixture"
+	if mixture_of + " Mixture" == " Dirty Water Chlorine Mixture" || mixture_of + " Mixture" == " Chlorine Dirty Water Mixture":
 		generated_substance_instance.substance_name = "Water"
 		generated_substance_instance.substance_color = Color(0, 0.6, 0.9, 0.7)
 	get_parent().substance_table.placements[0].add_child(generated_substance_instance)
