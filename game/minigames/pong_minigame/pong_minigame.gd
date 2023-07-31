@@ -26,6 +26,7 @@ func reset_ball():
 
 func check_results():
 	if player_score >= 3:
+		$BackButton.disabled = true
 		$AnimationPlayer.play("win")
 		get_parent().already_played = true
 		get_parent().get_node("Computer").texture = load("res://assets/objects/computer_opened.png")

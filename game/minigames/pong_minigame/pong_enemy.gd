@@ -21,7 +21,7 @@ func _on_ball_checker_body_entered(body):
 
 func _on_reaction_timer_timeout():
 	if can_move:
-		$ReactionTimer.start(randf_range(1.2, 1.4))
+		$ReactionTimer.start(randf_range(0.5, 1.0))
 	else:
-		$ReactionTimer.start(randf_range(1, 2))
+		$ReactionTimer.start(randf_range(0.5, 1.0))
 	can_move = !can_move
