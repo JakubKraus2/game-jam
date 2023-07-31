@@ -51,7 +51,7 @@ scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(65516, 3, 0, 131052, 3, 0, 19, 3, 0, 65555, 3, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_e5qbd")]
-position = Vector2(138, 222)
+position = Vector2(118, 146)
 
 [node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("6_fra6e")]
 position = Vector2(547, 156)

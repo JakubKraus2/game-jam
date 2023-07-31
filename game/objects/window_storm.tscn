@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b65jmqwu03lqy"]
+
+[ext_resource type="Texture2D" uid="uid://c87qil70xnbqw" path="res://assets/objects/window_storm_sprite_sheet.png" id="1_c3kwq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xjvh"]
+atlas = ExtResource("1_c3kwq")
+region = Rect2(0, 0, 53, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtcaf"]
+atlas = ExtResource("1_c3kwq")
+region = Rect2(53, 0, 53, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrgaf"]
+atlas = ExtResource("1_c3kwq")
+region = Rect2(106, 0, 53, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3p7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xjvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtcaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrgaf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="WindowStorm" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_t3p7v")
+autoplay = "default"
+frame_progress = 0.442984

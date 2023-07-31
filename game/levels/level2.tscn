@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://ghgsgh26hna1"]
+[gd_scene load_steps=46 format=3 uid="uid://ghgsgh26hna1"]
 
 [ext_resource type="Script" path="res://game/levels/level2.gd" id="1_bpq43"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_8v64i"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxebgtalcy47d" path="res://game/entities/pacient/pacient.tscn" id="9_ggpej"]
 [ext_resource type="PackedScene" uid="uid://dt3np3s7rjybf" path="res://game/entities/doctor/doctor.tscn" id="10_ncwe5"]
 [ext_resource type="Texture2D" uid="uid://cx7781scqofiv" path="res://assets/objects/power_outlet.png" id="11_4hby5"]
-[ext_resource type="Texture2D" uid="uid://drav3om74jvhv" path="res://assets/objects/window.png" id="12_klcw4"]
+[ext_resource type="PackedScene" uid="uid://b65jmqwu03lqy" path="res://game/objects/window_storm.tscn" id="11_o67e3"]
 [ext_resource type="Texture2D" uid="uid://bpe2sj6ls5tdv" path="res://assets/objects/door_normal.png" id="13_30pvh"]
 [ext_resource type="PackedScene" uid="uid://beuo4fptqt565" path="res://game/objects/butler.tscn" id="14_ts7ch"]
 [ext_resource type="PackedScene" uid="uid://dkrapu6cg5klr" path="res://game/objects/bookcase.tscn" id="15_t7hba"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://blve2hnqsexij" path="res://assets/objects/green_box_lid.png" id="40_akq1x"]
 [ext_resource type="PackedScene" uid="uid://b1j3wlqep0lm7" path="res://game/objects/fuses.tscn" id="41_wxj0f"]
 [ext_resource type="Texture2D" uid="uid://gp4aiir5hw0s" path="res://assets/black_spacing.png" id="42_8dysv"]
+[ext_resource type="PackedScene" uid="uid://djbmg5rn10ixd" path="res://game/menus/dialogue_player/dialogue_player.tscn" id="43_akxn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tihgy"]
 size = Vector2(203, 22)
@@ -82,7 +83,7 @@ scale = Vector2(2, 2)
 layer_0/tile_data = PackedInt32Array(65516, 3, 0, 131052, 3, 0, 39, 3, 0, 65575, 3, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_5einb")]
-position = Vector2(138, 222)
+position = Vector2(117, 164)
 
 [node name="SubstanceTable" parent="." node_paths=PackedStringArray("mixing_table") instance=ExtResource("6_dqp36")]
 position = Vector2(547, 156)
@@ -111,6 +112,10 @@ patient = NodePath("../Pacient")
 [node name="Furniture" type="Node2D" parent="."]
 position = Vector2(-427, -120)
 
+[node name="WindowStorm" parent="Furniture" instance=ExtResource("11_o67e3")]
+position = Vector2(638, 221)
+scale = Vector2(1.5, 1.5)
+
 [node name="PowerOutlet" type="Sprite2D" parent="Furniture"]
 position = Vector2(-28, 258)
 scale = Vector2(2, 2)
@@ -130,11 +135,6 @@ texture = ExtResource("11_4hby5")
 position = Vector2(1339, 257)
 scale = Vector2(2, 2)
 texture = ExtResource("11_4hby5")
-
-[node name="Window" type="Sprite2D" parent="Furniture"]
-position = Vector2(638, 221)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("12_klcw4")
 
 [node name="DoorNormal" type="Sprite2D" parent="Furniture"]
 position = Vector2(544, 237)
@@ -336,3 +336,10 @@ offset_top = -182.0
 offset_right = 1468.0
 offset_bottom = 596.0
 texture = ExtResource("42_8dysv")
+
+[node name="DialoguePlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("43_akxn5")]
+dialogue_file = "res://game/menus/dialogue_player/dialogues/tutorial_fuses.json"
+player = NodePath("../Player")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="ready" from="." to="." method="_on_ready"]

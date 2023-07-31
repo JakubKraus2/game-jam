@@ -41,7 +41,6 @@ vertical_alignment = 1
 
 [node name="BlackOutTimer" type="Timer" parent="."]
 wait_time = 25.0
-autostart = true
 
 [node name="LoseTimer" type="Timer" parent="."]
 wait_time = 12.0
