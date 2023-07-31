@@ -5,6 +5,8 @@ extends LevelParent
 var typed_code = []
 
 
+func _on_ready():
+	get_parent().player.set_physics_process(false)
 
 func check_typed_code():
 	$Code.text = ""
@@ -17,9 +19,11 @@ func check_typed_code():
 			$HBoxContainer/VBoxContainer3.get_child(i).disabled = true
 		await get_tree().create_timer(0.5).timeout
 		if typed_code == get_parent().correct_code:
+			get_parent().player.set_physics_process(true)
 			queue_free()
 			get_parent().already_played = true
 			get_parent().generate_substance()
+			get_parent().playing_mini_game = false
 		else:
 			typed_code.clear()
 			$Code.text = ""
@@ -64,3 +68,9 @@ func _on_button_8_pressed():
 func _on_button_9_pressed():
 	typed_code.append(9)
 	check_typed_code()
+
+
+func _on_button_pressed():
+	get_parent().player.set_physics_process(true)
+	get_parent().playing_mini_game = false
+	queue_free()

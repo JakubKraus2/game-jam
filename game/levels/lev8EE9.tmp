@@ -176,6 +176,5 @@ position = Vector2(-247, 128)
 generated_substance_name = "Chlorine"
 generated_substance_color = Color(0.470588, 0.447059, 0, 0.666667)
 
-[node name="FlowerPot" parent="." node_paths=PackedStringArray("safe") instance=ExtResource("29_liy0u")]
+[node name="FlowerPot" parent="." instance=ExtResource("29_liy0u")]
 position = Vector2(189, 121)
-safe = NodePath("../Safe")
