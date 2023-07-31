@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ghgsgh26hna1"]
+[gd_scene load_steps=45 format=3 uid="uid://ghgsgh26hna1"]
 
 [ext_resource type="Script" path="res://game/levels/level2.gd" id="1_bpq43"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_8v64i"]
@@ -40,6 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://c3r1orfi77ed8" path="res://assets/objects/doctor_chair.png" id="38_vso5r"]
 [ext_resource type="Texture2D" uid="uid://48qrlbqkrglu" path="res://assets/objects/green_box.png" id="39_r1ccw"]
 [ext_resource type="Texture2D" uid="uid://blve2hnqsexij" path="res://assets/objects/green_box_lid.png" id="40_akq1x"]
+[ext_resource type="PackedScene" uid="uid://b1j3wlqep0lm7" path="res://game/objects/fuses.tscn" id="41_wxj0f"]
+[ext_resource type="Texture2D" uid="uid://gp4aiir5hw0s" path="res://assets/black_spacing.png" id="42_8dysv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tihgy"]
 size = Vector2(203, 22)
@@ -125,7 +127,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_4hby5")
 
 [node name="PowerOutlet4" type="Sprite2D" parent="Furniture"]
-position = Vector2(1320, 256)
+position = Vector2(1339, 257)
 scale = Vector2(2, 2)
 texture = ExtResource("11_4hby5")
 
@@ -261,7 +263,7 @@ shape = SubResource("RectangleShape2D_a8ihf")
 position = Vector2(1227, 443)
 
 [node name="ClockFifteen3" type="Sprite2D" parent="Furniture"]
-position = Vector2(1276, 203)
+position = Vector2(1257, 194)
 scale = Vector2(2, 2)
 texture = ExtResource("16_mpy7g")
 
@@ -319,3 +321,18 @@ position = Vector2(189, 302)
 [node name="EmptyWaterFlask" parent="." instance=ExtResource("28_yd2e7")]
 position = Vector2(144, 299)
 generated_substance_color = Color(0.529412, 0.533333, 0.615686, 0.705882)
+
+[node name="Fuses" parent="." node_paths=PackedStringArray("darkness", "doctor") instance=ExtResource("41_wxj0f")]
+position = Vector2(865, 111)
+darkness = NodePath("../Darkness")
+doctor = NodePath("../Doctor")
+
+[node name="Darkness" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.811765)
+z_index = 100
+offset_left = -836.0
+offset_top = -182.0
+offset_right = 1468.0
+offset_bottom = 596.0
+texture = ExtResource("42_8dysv")

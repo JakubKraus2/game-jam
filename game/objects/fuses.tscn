@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1j3wlqep0lm7"]
+
+[ext_resource type="Texture2D" uid="uid://4k8yh2177wkj" path="res://assets/objects/fuses.png" id="1_5t027"]
+[ext_resource type="Script" path="res://game/objects/fuses.gd" id="1_wrvpa"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_yod4u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_newrp"]
+radius = 35.0
+height = 90.0
+
+[node name="Fuses" type="Area2D"]
+script = ExtResource("1_wrvpa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_5t027")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("CapsuleShape2D_newrp")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -49.0
+offset_top = -52.0
+offset_right = 49.0
+offset_bottom = -29.0
+theme = ExtResource("2_yod4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = 10
+offset_left = -69.0
+offset_top = -40.0
+offset_right = 69.0
+offset_bottom = -16.9999
+theme = ExtResource("2_yod4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlackOutTimer" type="Timer" parent="."]
+wait_time = 25.0
+autostart = true
+
+[node name="LoseTimer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="BlackOutTimer" to="." method="_on_black_out_timer_timeout"]
+[connection signal="timeout" from="LoseTimer" to="." method="_on_lose_timer_timeout"]
