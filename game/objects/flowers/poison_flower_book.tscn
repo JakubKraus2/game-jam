@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qcherhf5xcyn"]
+[gd_scene load_steps=8 format=3 uid="uid://qcherhf5xcyn"]
 
 [ext_resource type="Texture2D" uid="uid://b4f61xi8jpyie" path="res://assets/menus/read_book.png" id="1_j48rd"]
 [ext_resource type="Script" path="res://game/objects/flowers/poison_flower_book.gd" id="1_q4xi8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjudt4incm1jn" path="res://assets/menus/book_flower_poison.png" id="3_t11if"]
 [ext_resource type="Texture2D" uid="uid://dhl1r3pp118yn" path="res://assets/menus/arrow_left.png" id="5_y3o7h"]
 [ext_resource type="Texture2D" uid="uid://b2nr11od6s7n3" path="res://assets/menus/arrow_right.png" id="6_rdt7f"]
+[ext_resource type="Texture2D" uid="uid://cyljc8f78x2ns" path="res://assets/menus/exit_book.png" id="7_w5isj"]
 
 [node name="PoisonFlowerBook" type="CanvasLayer"]
 script = ExtResource("1_q4xi8")
@@ -62,5 +63,14 @@ offset_right = 440.0
 offset_bottom = 187.0
 texture_normal = ExtResource("6_rdt7f")
 
+[node name="TextureButton3" type="TextureButton" parent="."]
+offset_left = 411.0
+offset_top = 30.0
+offset_right = 427.0
+offset_bottom = 47.0
+texture_normal = ExtResource("7_w5isj")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]

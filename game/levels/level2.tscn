@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ghgsgh26hna1"]
+[gd_scene load_steps=31 format=3 uid="uid://ghgsgh26hna1"]
 
 [ext_resource type="Script" path="res://game/levels/level2.gd" id="1_bpq43"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_8v64i"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://b1oa5ii74hgb1" path="res://game/objects/safe.tscn" id="29_f36qs"]
 [ext_resource type="PackedScene" uid="uid://p45h122fe75s" path="res://game/objects/flower_pot.tscn" id="29_liy0u"]
 [ext_resource type="PackedScene" uid="uid://cnttvb1mgvqb4" path="res://game/objects/water_puddle.tscn" id="30_3lp7x"]
+[ext_resource type="PackedScene" uid="uid://cg2b84qj1bc54" path="res://game/minigames/book/book_case_book_shower.tscn" id="30_iyqrk"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_bpq43")
@@ -108,9 +109,6 @@ texture = ExtResource("13_30pvh")
 [node name="Butler" parent="Furniture" instance=ExtResource("14_ts7ch")]
 position = Vector2(485, 246)
 
-[node name="Bookcase" parent="Furniture" instance=ExtResource("15_t7hba")]
-position = Vector2(806, 242)
-
 [node name="ClockFifteen" type="Sprite2D" parent="Furniture"]
 position = Vector2(727, 218)
 scale = Vector2(2, 2)
@@ -179,3 +177,6 @@ generated_substance_color = Color(0.470588, 0.447059, 0, 0.666667)
 [node name="FlowerPot" parent="." node_paths=PackedStringArray("safe") instance=ExtResource("29_liy0u")]
 position = Vector2(189, 121)
 safe = NodePath("../Safe")
+
+[node name="BookCaseBookShower" parent="." instance=ExtResource("30_iyqrk")]
+position = Vector2(396, 115)

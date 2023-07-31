@@ -10,6 +10,7 @@ var generate_random
 
 
 func _on_ready():
+	$Label2.text = "Flower"
 	generate_flower()
 
 func _process(delta):

@@ -4,6 +4,11 @@ extends LevelParent
 var page = 1
 
 
+
+func _on_ready():
+	get_parent().player.set_physics_process(false)
+	change_page()
+
 func change_page():
 	if page < 1:
 		page = 1
@@ -38,3 +43,8 @@ func _on_texture_button_pressed():
 func _on_texture_button_2_pressed():
 	page += 1
 	change_page()
+
+func _on_texture_button_3_pressed():
+	get_parent().player.set_physics_process(true)
+	get_parent().playing_mini_game = false
+	queue_free()
