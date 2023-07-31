@@ -2,6 +2,9 @@ extends Pickable
 
 
 
+var is_used = false
+
+
 func _on_ready():
 	$Label2.text = "Towel"
 	$SpriteIdle.visible = true
