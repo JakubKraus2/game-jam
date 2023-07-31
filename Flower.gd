@@ -11,7 +11,6 @@ var generate_random
 
 func _on_ready():
 	generate_flower()
-	$Label2.text = str(flower_name)
 
 func _process(delta):
 	check_for_areas()
@@ -68,6 +67,7 @@ func generate_flower():
 			leaf_num = 9
 	$SpriteIdle.texture = load("res://assets/objects/flowers/flower" + str(generate_random+1) + ".png")
 	$Sprite2D.texture = load("res://assets/objects/flowers/flower" + str(generate_random+1) + ".png")
+	$Label2.text = str(flower_name)
 
 func _physics_process(delta):
 	pass

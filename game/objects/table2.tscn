@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg6kaul8uc1yb"]
+
+[ext_resource type="Texture2D" uid="uid://cm4kdfqpvivid" path="res://assets/objects/table.png" id="1_b5apk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jgp6"]
+size = Vector2(74, 60)
+
+[node name="Table" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Table" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_b5apk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1jgp6")

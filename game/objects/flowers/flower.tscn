@@ -5,12 +5,12 @@
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="3_mlnoc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8knd"]
-radius = 30.0
-height = 62.0
+radius = 16.0
+height = 118.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uk618"]
-radius = 31.0
-height = 88.0
+radius = 21.0
+height = 130.0
 
 [node name="Flower" type="Area2D" groups=["flowers"]]
 script = ExtResource("1_2el6w")
@@ -22,8 +22,7 @@ texture = ExtResource("2_d8621")
 texture = ExtResource("2_d8621")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18)
-rotation = 1.5708
+position = Vector2(0, 37)
 shape = SubResource("CapsuleShape2D_i8knd")
 
 [node name="Label" type="Label" parent="."]
@@ -51,8 +50,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChecker"]
-position = Vector2(0, 19)
-rotation = 1.5708
+position = Vector2(0, 38)
 shape = SubResource("CapsuleShape2D_uk618")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
