@@ -5,12 +5,12 @@
 [ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="3_mlnoc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8knd"]
-radius = 47.0
-height = 150.0
+radius = 30.0
+height = 62.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uk618"]
-radius = 49.0
-height = 182.0
+radius = 31.0
+height = 88.0
 
 [node name="Flower" type="Area2D" groups=["flowers"]]
 script = ExtResource("1_2el6w")

@@ -32,7 +32,7 @@ func _ready():
 		progress_box_instance.substance_name.text = str(get_parent().substance_table.substances[i].substance_name)
 		var color_icon = Sprite2D.new()
 		add_child(color_icon)
-		color_icon.global_position = Vector2($ProgressContainer.global_position.x - 8, $ProgressContainer.global_position.y - ((get_parent().substance_table.substances.size()-1)*color_icon_spacing) + (i*color_icon_spacing) + 16)
+		color_icon.global_position = Vector2($ProgressContainer.global_position.x - 32, $ProgressContainer.global_position.y - ((get_parent().substance_table.substances.size()-1)*color_icon_spacing) + (i*color_icon_spacing) + 16)
 		color_icon.texture = load("res://assets/objects/substance_particle.png")
 		color_icon.set_modulate(get_parent().substance_table.substances[i].substance_color)
 		color_icon.set_scale(Vector2(5, 5))
@@ -98,9 +98,6 @@ func generate_substance():
 	get_parent().substance_table.substances.append(generated_substance_instance)
 	generated_substance_instance.substance_color = Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1), randf_range(0.3, 1))
 	generated_substance_instance.substance_name = "Mixture"
-	if mixture_of + " Mixture" == " Dirty Water Chlorine Mixture" || mixture_of + " Mixture" == " Chlorine Dirty Water Mixture":
-		generated_substance_instance.substance_name = "Water"
-		generated_substance_instance.substance_color = Color(0, 0.6, 0.9, 0.7)
 	get_parent().substance_table.placements[0].add_child(generated_substance_instance)
 	generated_substance_instance.global_position = get_parent().substance_table.placements[0].global_position
 	get_parent().substance_table.placements.erase(get_parent().substance_table.placements[0])
@@ -110,3 +107,9 @@ func generate_substance():
 	else:
 		print("nn")
 		generated_substance_instance.add_to_group("incorrect")
+	if mixture_of + " Mixture" == " Dirty Water Chlorine Mixture" || mixture_of + " Mixture" == " Chlorine Dirty Water Mixture":
+		for i in wrong_substances:
+			if wrong_substances[i] < wrong_percentage[i] + 10 && wrong_substances[i] > wrong_percentage[i] - 10:
+				generated_substance_instance.substance_name = "Water"
+				generated_substance_instance.substance_color = Color(0, 0.6, 0.9, 0.7)
+				generated_substance_instance._ready()

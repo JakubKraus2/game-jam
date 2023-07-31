@@ -31,6 +31,7 @@ func _process(delta):
 					hidden_substance_instance.substance_name = hidden_substance_name
 					hidden_substance_instance.substance_color = hidden_substance_color
 					hidden_substance_instance.insides.set_self_modulate(hidden_substance_color)
+					hidden_substance_instance._ready()
 		else:
 			set_process(false)
 
