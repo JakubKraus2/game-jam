@@ -221,20 +221,20 @@ substance_table = NodePath("../SubstanceTable")
 [node name="TestSubstance" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(709, 198)
-substance_name = "Gulas"
+substance_name = "Dreamnectar"
 substance_color = Color(0.847059, 0.352941, 0.772549, 0.588235)
 
 [node name="TestSubstance2" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(777, 240)
-substance_name = "Svickova"
-substance_color = Color(0.364706, 0.560784, 0.447059, 0.470588)
+substance_name = "Cosmothel"
+substance_color = Color(0.329412, 0.360784, 0.352941, 0.470588)
 
 [node name="TestSubstance3" parent="." instance=ExtResource("12_0hvex")]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(865, 252.355)
-substance_name = "Ryze"
-substance_color = Color(0.270588, 0.647059, 0.886275, 0.784314)
+substance_name = "Aeropan"
+substance_color = Color(0.423529, 0.592157, 0.145098, 0.784314)
 
 [node name="DialoguePlayer" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_vrlsc")]
 dialogue_file = "res://game/menus/dialogue_player/dialogues/tutorial_finding.json"

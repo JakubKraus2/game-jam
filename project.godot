@@ -26,6 +26,7 @@ EscapeMenu="*res://game/menus/escape_menu/escape_menu.tscn"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/physics_ticks_per_second=60
 window/max_physics_steps_per_frame=8

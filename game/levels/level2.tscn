@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ghgsgh26hna1"]
+[gd_scene load_steps=43 format=3 uid="uid://ghgsgh26hna1"]
 
 [ext_resource type="Script" path="res://game/levels/level2.gd" id="1_bpq43"]
 [ext_resource type="PackedScene" uid="uid://be3i21vcvv2fl" path="res://game/levels/room.tscn" id="2_8v64i"]
@@ -38,6 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://dg6kaul8uc1yb" path="res://game/objects/table2.tscn" id="36_n10wn"]
 [ext_resource type="Texture2D" uid="uid://b6erq4cb3ynjb" path="res://assets/objects/computer.png" id="37_ryghi"]
 [ext_resource type="Texture2D" uid="uid://c3r1orfi77ed8" path="res://assets/objects/doctor_chair.png" id="38_vso5r"]
+[ext_resource type="Texture2D" uid="uid://48qrlbqkrglu" path="res://assets/objects/green_box.png" id="39_r1ccw"]
+[ext_resource type="Texture2D" uid="uid://blve2hnqsexij" path="res://assets/objects/green_box_lid.png" id="40_akq1x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tihgy"]
 size = Vector2(203, 22)
@@ -283,12 +285,21 @@ position = Vector2(0, 27)
 scale = Vector2(2, 2)
 texture = ExtResource("38_vso5r")
 
+[node name="GreenBox" type="Sprite2D" parent="Furniture"]
+position = Vector2(1231, 425)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("39_r1ccw")
+
+[node name="GreenBoxLid" type="Sprite2D" parent="Furniture/GreenBox"]
+position = Vector2(13, 9)
+texture = ExtResource("40_akq1x")
+
 [node name="WaterPuddle" parent="." instance=ExtResource("30_3lp7x")]
 position = Vector2(-317, 256)
 
 [node name="Towel" parent="." instance=ExtResource("27_nefnx")]
 show_behind_parent = false
-position = Vector2(805, 305)
+position = Vector2(798, 298)
 
 [node name="Safe" parent="." instance=ExtResource("29_f36qs")]
 position = Vector2(-247, 128)

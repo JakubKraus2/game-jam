@@ -2,8 +2,8 @@ extends LevelParent
 
 
 
-var correct_substances = {"Cerna": 0.0, "Modra": 0.0, "Zluta": 0.0}
-var correct_percentage = {"Cerna": 15.0, "Modra": 50.0, "Zluta": 35.0}
+var correct_substances = {"Pyropholite": 0.0, "Aquathane": 0.0, "Opalium": 0.0}
+var correct_percentage = {"Pyropholite": 15.0, "Aquathane": 50.0, "Opalium": 35.0}
 
 
 
