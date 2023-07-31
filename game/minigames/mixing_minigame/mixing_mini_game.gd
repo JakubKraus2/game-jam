@@ -87,15 +87,20 @@ func _on_button_2_pressed():
 
 func generate_substance():
 	var generated_substance_instance = generated_substance.instantiate()
+	var mixture_of = ""
 	for i in get_parent().substance_table.get_children():
 		if i.is_in_group("placements"):
 			for j in i.get_children():
 				j.queue_free()
+				mixture_of += " " + str(j.substance_name)
 			if !get_parent().substance_table.placements.has(i):
 				get_parent().substance_table.placements.append(i)
 	get_parent().substance_table.substances.append(generated_substance_instance)
 	generated_substance_instance.substance_color = Color(randf_range(0, 1), randf_range(0, 1), randf_range(0, 1), randf_range(0.3, 1))
-	generated_substance_instance.substance_name = "Mixture"
+	generated_substance_instance.substance_name = mixture_of + " Mixture"
+	if generated_substance_instance.substance_name == " Dirty Water Chlorine Mixture" || generated_substance_instance.substance_name == " Chlorine Dirty Water Mixture":
+		generated_substance_instance.substance_name = "Water"
+		generated_substance_instance.substance_color = Color(0, 0.6, 0.9, 0.7)
 	get_parent().substance_table.placements[0].add_child(generated_substance_instance)
 	generated_substance_instance.global_position = get_parent().substance_table.placements[0].global_position
 	get_parent().substance_table.placements.erase(get_parent().substance_table.placements[0])

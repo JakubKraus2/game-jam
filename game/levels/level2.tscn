@@ -168,9 +168,9 @@ position = Vector2(82, 317)
 
 [node name="EmptyWaterFlask" parent="." instance=ExtResource("28_yd2e7")]
 position = Vector2(165, 304)
-generated_substance_color = Color(0, 0.6, 0.9, 0.6)
+generated_substance_color = Color(0.529412, 0.533333, 0.615686, 0.705882)
 
 [node name="Safe" parent="." instance=ExtResource("29_f36qs")]
 position = Vector2(-247, 128)
-generated_substance_name = "Smazak"
-generated_substance_color = Color(0.721569, 0.180392, 0.486275, 0.556863)
+generated_substance_name = "Chlorine"
+generated_substance_color = Color(0.470588, 0.447059, 0, 0.666667)
