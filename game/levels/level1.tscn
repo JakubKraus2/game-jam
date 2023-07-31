@@ -176,10 +176,10 @@ hidden_substance_name = "Cerna"
 hidden_substance_color = Color(0, 0, 0, 1)
 
 [node name="MetalDetector" parent="." node_paths=PackedStringArray("object_to_find") instance=ExtResource("27_axds2")]
-position = Vector2(248, 173)
+position = Vector2(-176, 130)
 object_to_find = NodePath("../GreenBox")
 
 [node name="ScrewDriver" parent="." instance=ExtResource("29_yibsy")]
-position = Vector2(176, 177)
+position = Vector2(165, 302)
 
 [connection signal="ready" from="." to="." method="_on_ready"]

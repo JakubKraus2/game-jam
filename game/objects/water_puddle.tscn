@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnttvb1mgvqb4"]
+
+[ext_resource type="Script" path="res://game/objects/water_puddle.gd" id="1_2r5ui"]
+[ext_resource type="Texture2D" uid="uid://dvs1kjs238ruf" path="res://assets/objects/puddle.png" id="1_5c5w8"]
+
+[node name="WaterPuddle" type="Node2D"]
+script = ExtResource("1_2r5ui")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_5c5w8")
+
+[node name="CreateWaterDropTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="CreateWaterDropTimer" to="." method="_on_create_water_drop_timer_timeout"]

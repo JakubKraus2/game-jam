@@ -34,3 +34,9 @@ func _on_level_2_pressed():
 	await PseudoLoading.get_node("AnimationPlayer").animation_finished
 	Global.current_level = 2
 	get_tree().change_scene_to_file("res://game/levels/level1.tscn")
+
+func _on_level_3_pressed():
+	PseudoLoading.get_node("AnimationPlayer").play("change")
+	await PseudoLoading.get_node("AnimationPlayer").animation_finished
+	Global.current_level = 3
+	get_tree().change_scene_to_file("res://game/levels/level2.tscn")
