@@ -3,7 +3,7 @@ extends LevelParent
 
 
 var correct_substances = {"Dreamnectar": 0.0, "Cosmothel": 0.0, "Aeropan": 0.0}
-var correct_percentage = {"Dreamnectar": 30.0, "Svickova": 60.0, "Ryze": 40.0}
+var correct_percentage = {"Dreamnectar": 30.0, "Cosmothel": 60.0, "Aeropan": 40.0}
 
 @onready var dialogue_player = $DialoguePlayerMinigame
 var already_played = false
