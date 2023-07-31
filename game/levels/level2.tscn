@@ -24,9 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://brwucdi57b8d3" path="res://assets/objects/painting.png" id="22_8rl58"]
 [ext_resource type="Texture2D" uid="uid://bwtko2jjet4k5" path="res://assets/objects/carpet.png" id="23_lsw78"]
 [ext_resource type="PackedScene" uid="uid://dutojn00tlgb5" path="res://game/objects/camera.tscn" id="24_ojdmy"]
-[ext_resource type="PackedScene" uid="uid://dxj0hix8hj2pc" path="res://game/objects/substances/substance.tscn" id="26_fmirh"]
 [ext_resource type="PackedScene" uid="uid://dr84d1mop6ft3" path="res://game/objects/towel.tscn" id="27_nefnx"]
 [ext_resource type="PackedScene" uid="uid://btbsg2tjctlqh" path="res://game/objects/empty_water_flask.tscn" id="28_yd2e7"]
+[ext_resource type="PackedScene" uid="uid://b1oa5ii74hgb1" path="res://game/objects/safe.tscn" id="29_f36qs"]
 [ext_resource type="PackedScene" uid="uid://cnttvb1mgvqb4" path="res://game/objects/water_puddle.tscn" id="30_3lp7x"]
 
 [node name="Level2" type="Node2D"]
@@ -159,18 +159,18 @@ texture = ExtResource("23_lsw78")
 [node name="Camera" parent="Furniture" instance=ExtResource("24_ojdmy")]
 position = Vector2(107, 393)
 
-[node name="TestSubstance" parent="." instance=ExtResource("26_fmirh")]
-position = Vector2(-59, 140)
-substance_name = "Zluta"
-substance_color = Color(0.694118, 0.560784, 0, 1)
-
 [node name="WaterPuddle" parent="." instance=ExtResource("30_3lp7x")]
 position = Vector2(215, 182)
 
 [node name="Towel" parent="." instance=ExtResource("27_nefnx")]
 show_behind_parent = false
-position = Vector2(94, 289)
+position = Vector2(82, 317)
 
 [node name="EmptyWaterFlask" parent="." instance=ExtResource("28_yd2e7")]
 position = Vector2(165, 304)
 generated_substance_color = Color(0, 0.6, 0.9, 0.6)
+
+[node name="Safe" parent="." instance=ExtResource("29_f36qs")]
+position = Vector2(-247, 128)
+generated_substance_name = "Smazak"
+generated_substance_color = Color(0.721569, 0.180392, 0.486275, 0.556863)
