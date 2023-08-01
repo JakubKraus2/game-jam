@@ -23,3 +23,4 @@ func _on_quit_button_pressed():
 	$AnimationPlayer.play("close")
 	await PseudoLoading.get_node("AnimationPlayer").animation_finished
 	get_tree().change_scene_to_file("res://game/menus/level_select_menu/level_select_menu.tscn")
+	MainCamera.global_position = MainCamera.get_viewport_rect().size/2

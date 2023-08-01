@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bje7yeulfd0t7"]
+
+[ext_resource type="Script" path="res://Flower.gd" id="1_2el6w"]
+[ext_resource type="Texture2D" uid="uid://d13g2ec8lf6xq" path="res://assets/objects/flowers/flower1.png" id="2_d8621"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="3_mlnoc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8knd"]
+radius = 16.0
+height = 118.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uk618"]
+radius = 21.0
+height = 130.0
+
+[node name="Flower" type="Area2D" groups=["flowers"]]
+script = ExtResource("1_2el6w")
+
+[node name="SpriteIdle" type="Sprite2D" parent="."]
+texture = ExtResource("2_d8621")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_d8621")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 37)
+shape = SubResource("CapsuleShape2D_i8knd")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -49.0
+offset_top = -52.0
+offset_right = 49.0
+offset_bottom = -29.0
+theme = ExtResource("3_mlnoc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = 10
+offset_left = -69.0
+offset_top = -40.0
+offset_right = 69.0
+offset_bottom = -16.9999
+theme = ExtResource("3_mlnoc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaChecker" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChecker"]
+position = Vector2(0, 38)
+shape = SubResource("CapsuleShape2D_uk618")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="ready" from="." to="." method="_on_ready"]

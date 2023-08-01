@@ -1,0 +1,333 @@
+[gd_scene load_steps=17 format=3 uid="uid://c2bnr7ywbtscm"]
+
+[ext_resource type="Texture2D" uid="uid://gp4aiir5hw0s" path="res://assets/black_spacing.png" id="1_1uud2"]
+[ext_resource type="Script" path="res://game/minigames/pong_minigame/pong_minigame.gd" id="1_tdcfi"]
+[ext_resource type="Texture2D" uid="uid://cm4kdfqpvivid" path="res://assets/objects/table.png" id="2_na3np"]
+[ext_resource type="Texture2D" uid="uid://ck6hns3slgt5e" path="res://assets/wall.png" id="2_o6teb"]
+[ext_resource type="Texture2D" uid="uid://b6erq4cb3ynjb" path="res://assets/objects/computer.png" id="2_ppmmb"]
+[ext_resource type="PackedScene" uid="uid://j2nw5unpchbm" path="res://game/minigames/pong_minigame/ball.tscn" id="3_sh5lj"]
+[ext_resource type="Texture2D" uid="uid://n0xdhrut8smx" path="res://assets/white_spacing.png" id="4_1kpwy"]
+[ext_resource type="PackedScene" uid="uid://7ee1jy8k7f5v" path="res://game/minigames/pong_minigame/pong_player.tscn" id="4_30tas"]
+[ext_resource type="PackedScene" uid="uid://c40rpuhkxfut0" path="res://game/minigames/pong_minigame/pong_enemy.tscn" id="5_p4c80"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="6_ew32a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkfi5"]
+size = Vector2(400, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6305n"]
+size = Vector2(20, 316)
+
+[sub_resource type="Animation" id="Animation_xtbkh"]
+resource_name = "cound_down"
+length = 3.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/CountDown:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.0003, 0.0004, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["3", "3", "3", "3", "3", "2", "1", "go!"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/CountDown:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.9, 1, 1.6, 1.9, 2, 2.6, 2.9, 3, 3.4, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1, 90, 90, 1, 90, 90, 1, 90, 90, 1, 90, 90]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_vi1og"]
+resource_name = "lost"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/CountDown:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["you suck"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/CountDown:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 80]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/CountDown:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y7o68"]
+resource_name = "win"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer/CountDown:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["giga win"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/CountDown:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1, 80]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/CountDown:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u834q"]
+_data = {
+"cound_down": SubResource("Animation_xtbkh"),
+"lost": SubResource("Animation_vi1og"),
+"win": SubResource("Animation_y7o68")
+}
+
+[node name="PongMinigame" type="CanvasLayer" node_paths=PackedStringArray("ball")]
+script = ExtResource("1_tdcfi")
+ball = NodePath("Ball")
+
+[node name="Wall" type="TextureRect" parent="."]
+offset_left = -93.0
+offset_top = -65.0
+offset_right = -3.0
+offset_bottom = 7.0
+scale = Vector2(10, 10)
+texture = ExtResource("2_o6teb")
+stretch_mode = 1
+
+[node name="Table" type="TextureRect" parent="."]
+offset_top = 115.0
+offset_right = 1302.0
+offset_bottom = 721.0
+texture = ExtResource("2_na3np")
+stretch_mode = 4
+
+[node name="Computer" type="TextureRect" parent="."]
+offset_left = 122.0
+offset_right = 858.0
+offset_bottom = 443.0
+texture = ExtResource("2_ppmmb")
+stretch_mode = 4
+
+[node name="Modulate" type="TextureRect" parent="."]
+self_modulate = Color(0.0941176, 0.0941176, 0.0941176, 1)
+offset_left = 109.0
+offset_top = 23.0
+offset_right = 505.0
+offset_bottom = 210.0
+texture = ExtResource("4_1kpwy")
+
+[node name="Border" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+position = Vector2(320, 12)
+shape = SubResource("RectangleShape2D_jkfi5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
+position = Vector2(320, 222)
+shape = SubResource("RectangleShape2D_jkfi5")
+
+[node name="WinArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WinArea"]
+position = Vector2(506, 180)
+shape = SubResource("RectangleShape2D_6305n")
+
+[node name="LoseArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LoseArea"]
+position = Vector2(112, 178)
+shape = SubResource("RectangleShape2D_6305n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, 13)
+shape = SubResource("RectangleShape2D_jkfi5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(320, 220.5)
+shape = SubResource("RectangleShape2D_jkfi5")
+
+[node name="Ball" parent="." instance=ExtResource("3_sh5lj")]
+position = Vector2(310, 120)
+
+[node name="PongPlayer" parent="." instance=ExtResource("4_30tas")]
+position = Vector2(170, 120)
+
+[node name="PongEnemy" parent="." node_paths=PackedStringArray("ball") instance=ExtResource("5_p4c80")]
+position = Vector2(447, 120)
+ball = NodePath("../Ball")
+
+[node name="Black" type="TextureRect" parent="."]
+offset_left = 109.0
+offset_top = -9.0
+offset_right = 145.0
+offset_bottom = 233.0
+texture = ExtResource("1_1uud2")
+
+[node name="Black2" type="TextureRect" parent="."]
+offset_left = 472.0
+offset_top = -16.0
+offset_right = 506.0
+offset_bottom = 233.0
+texture = ExtResource("1_1uud2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -139.0
+offset_top = 25.0
+offset_right = 116.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme = ExtResource("6_ew32a")
+theme_override_constants/separation = 223
+
+[node name="PlayerScore" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
+
+[node name="EnemyScore" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.0
+offset_top = -179.0
+offset_right = 175.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CountDown" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme = ExtResource("6_ew32a")
+theme_override_font_sizes/font_size = 1
+text = "3"
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u834q")
+}
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 422.0
+offset_top = 207.0
+offset_right = 452.0
+offset_bottom = 236.0
+focus_mode = 0
+flat = true
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="Border" to="." method="_on_border_body_entered"]
+[connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
+[connection signal="body_entered" from="LoseArea" to="." method="_on_lose_area_body_entered"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

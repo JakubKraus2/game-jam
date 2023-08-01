@@ -68,3 +68,16 @@ func _on_area_2d_body_exited(body):
 	$Label.visible = false
 	$Label2.visible = false
 	set_process(false)
+
+func lose():
+	MainCamera.global_position = get_viewport_rect().size/2
+	var game_over_screen_instance = game_over_screen.instantiate()
+	add_child(game_over_screen_instance)
+	$AnimationPlayer.play("bad_ending")
+	await $AnimationPlayer.animation_finished
+	$AnimationPlayer.play("bad_ending_droplet")
+	game_over_screen_instance.get_node("AnimationPlayer").play("lost")
+	await game_over_screen_instance.get_node("AnimationPlayer").animation_finished
+	PseudoLoading.get_node("AnimationPlayer").play("change")
+	await PseudoLoading.get_node("AnimationPlayer").animation_finished
+	get_tree().change_scene_to_file("res://game/menus/level_select_menu/level_select_menu.tscn")

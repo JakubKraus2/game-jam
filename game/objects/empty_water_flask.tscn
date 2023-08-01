@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://btbsg2tjctlqh"]
+
+[ext_resource type="Script" path="res://game/objects/empty_water_flask.gd" id="1_irxu2"]
+[ext_resource type="Texture2D" uid="uid://ppual5esvrsu" path="res://assets/objects/erlenmeyer_flask.png" id="1_li4bg"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="2_bfgfo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b53ye"]
+radius = 23.0
+height = 98.0
+
+[node name="EmptyWaterFlask" type="Area2D"]
+script = ExtResource("1_irxu2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_li4bg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_b53ye")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -49.0
+offset_top = -52.0
+offset_right = 49.0
+offset_bottom = -29.0
+theme = ExtResource("2_bfgfo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = 10
+offset_left = -69.0
+offset_top = -40.0
+offset_right = 69.0
+offset_bottom = -16.9999
+theme = ExtResource("2_bfgfo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

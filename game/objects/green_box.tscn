@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmntos4g43345"]
+
+[ext_resource type="Script" path="res://game/objects/green_box.gd" id="1_30d4y"]
+[ext_resource type="Texture2D" uid="uid://blve2hnqsexij" path="res://assets/objects/green_box_lid.png" id="1_pvhbi"]
+[ext_resource type="Texture2D" uid="uid://dr0ek2hn8w206" path="res://assets/objects/disassembled_floor.png" id="2_bg5y0"]
+[ext_resource type="Texture2D" uid="uid://48qrlbqkrglu" path="res://assets/objects/green_box.png" id="2_eihmg"]
+[ext_resource type="Texture2D" uid="uid://kuqqj5kk4n4x" path="res://assets/objects/disassembled_floor_plank.png" id="3_mjgu0"]
+[ext_resource type="Theme" uid="uid://bg721ml30kggd" path="res://assets/themes/hint_label_theme.tres" id="4_6v24a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngvxa"]
+size = Vector2(10, 9)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fikib"]
+radius = 16.5
+height = 61.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oaik8"]
+radius = 19.5064
+
+[node name="GreenBox" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_30d4y")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="DisassembledFloor" type="Sprite2D" parent="Sprites"]
+position = Vector2(-17, 26)
+scale = Vector2(2, 2)
+texture = ExtResource("2_bg5y0")
+
+[node name="DisassembledFloorPlank" type="Sprite2D" parent="Sprites"]
+position = Vector2(-26, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("3_mjgu0")
+
+[node name="Lid" type="Sprite2D" parent="Sprites"]
+position = Vector2(36, 7)
+scale = Vector2(2, 2)
+texture = ExtResource("1_pvhbi")
+
+[node name="Box" type="Sprite2D" parent="Sprites"]
+position = Vector2(0, 7)
+scale = Vector2(2, 2)
+texture = ExtResource("2_eihmg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 4)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ngvxa")
+
+[node name="Label" type="Label" parent="."]
+z_index = 10
+offset_left = -49.0
+offset_top = -52.0
+offset_right = 49.0
+offset_bottom = -29.0
+theme = ExtResource("4_6v24a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+z_index = 10
+offset_left = -69.0
+offset_top = -40.0
+offset_right = 69.0
+offset_bottom = -16.9999
+theme = ExtResource("4_6v24a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, 7)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fikib")
+
+[node name="AreaChecker" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, 7)
+scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaChecker"]
+shape = SubResource("CircleShape2D_oaik8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

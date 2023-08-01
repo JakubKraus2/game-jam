@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://p45h122fe75s"]
+
+[ext_resource type="Script" path="res://game/objects/flower_pot.gd" id="1_2ajfx"]
+[ext_resource type="Texture2D" uid="uid://sl1dw25vt6fd" path="res://assets/objects/flower_pot.png" id="1_g0ccg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dea42"]
+size = Vector2(34, 23)
+
+[node name="FlowerPot" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_2ajfx")
+
+[node name="FlowerTexture1" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_g0ccg")
+offset = Vector2(0, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_dea42")
+
+[node name="FlowerTexture2" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(34, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g0ccg")
+offset = Vector2(0, 12)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(34, 24)
+shape = SubResource("RectangleShape2D_dea42")
+
+[node name="FlowerTexture3" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(68, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("1_g0ccg")
+offset = Vector2(0, 12)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(68, 24)
+shape = SubResource("RectangleShape2D_dea42")

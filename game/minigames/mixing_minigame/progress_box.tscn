@@ -4,15 +4,20 @@
 [ext_resource type="Script" path="res://game/minigames/mixing_minigame/progress_box.gd" id="2_1bed3"]
 
 [node name="ProgressBox" type="HBoxContainer"]
+offset_right = 244.0
+offset_bottom = 64.0
 theme = ExtResource("1_n5n1c")
+alignment = 1
 script = ExtResource("2_1bed3")
 
 [node name="SubstanceName" type="Label" parent="."]
 custom_minimum_size = Vector2(160, 64)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
+text = "aaa"
 
 [node name="SubstancePercentage" type="Label" parent="."]
 custom_minimum_size = Vector2(80, 64)
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
+text = "aaa"
